@@ -1919,6 +1919,11 @@ MonoBehaviour:
   TestPoint13: {fileID: 1481825688}
   TestPoint14: {fileID: 688064168}
   TestPoint15: {fileID: 620892493}
+  TestLie1: {fileID: 651300487}
+  TestLie2: {fileID: 169160139}
+  TestLie3: {fileID: 464530802}
+  TestLie4: {fileID: 1516002590}
+  TestLie5: {fileID: 2141608593}
 --- !u!1 &595383916
 GameObject:
   m_ObjectHideFlags: 0
