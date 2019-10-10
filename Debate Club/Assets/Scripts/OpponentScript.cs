@@ -51,21 +51,15 @@ public class OpponentScript : MonoBehaviour
         TestPoint13.onClick.AddListener(TestPoint13IsClicked);
         TestPoint14.onClick.AddListener(TestPoint14IsClicked);
         TestPoint15.onClick.AddListener(TestPoint15IsClicked);
-        TestPoint11.onClick.AddListener(TestLie1IsClicked);
-        TestPoint12.onClick.AddListener(TestLie2IsClicked);
-        TestPoint13.onClick.AddListener(TestLie3IsClicked);
-        TestPoint14.onClick.AddListener(TestLie4IsClicked);
-        TestPoint15.onClick.AddListener(TestLie5IsClicked);
+        TestLie1.onClick.AddListener(TestLie1IsClicked);
+        TestLie2.onClick.AddListener(TestLie2IsClicked);
+        TestLie3.onClick.AddListener(TestLie3IsClicked);
+        TestLie4.onClick.AddListener(TestLie4IsClicked);
+        TestLie5.onClick.AddListener(TestLie5IsClicked);
     }
     // Update is called once per frame
     void Update()
-    {
-        // If the opponents health reaches 0 you win
-        if (EnemyHealth < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-
-        }
+    {    
     }
     // Does a specific ammount of damage to the opponent depending on the argument used
     void TestPoint1IsClicked()
@@ -73,60 +67,100 @@ public class OpponentScript : MonoBehaviour
         Button btn = TestPoint1.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 100;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint2IsClicked()
     {
         Button btn = TestPoint2.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 90;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint3IsClicked()
     {
         Button btn = TestPoint3.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 80;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint4IsClicked()
     {
         Button btn = TestPoint4.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 70;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint5IsClicked()
     {
         Button btn = TestPoint5.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 60;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint6IsClicked()
     {
         Button btn = TestPoint6.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 50;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint7IsClicked()
     {
         Button btn = TestPoint7.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 40;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint8IsClicked()
     {
         Button btn = TestPoint8.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 30;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint9IsClicked()
     {
         Button btn = TestPoint9.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 20;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint10IsClicked()
     {
         Button btn = TestPoint10.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 10;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint11IsClicked()
     {
@@ -139,29 +173,44 @@ public class OpponentScript : MonoBehaviour
         Button btn = TestPoint12.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 6;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint13IsClicked()
     {
         Button btn = TestPoint13.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 4;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint14IsClicked()
     {
         Button btn = TestPoint14.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 2;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestPoint15IsClicked()
     {
         Button btn = TestPoint15.GetComponent<Button>();
         EnemyHealth = EnemyHealth - 0;
         Debug.Log(EnemyHealth);
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
 
     void TestLie1IsClicked()
     {
-       // float Intellegence = Random.value;
         Button btn = TestLie1.GetComponent<Button>();
         if (Random.value < (.5))
         {
@@ -172,11 +221,14 @@ public class OpponentScript : MonoBehaviour
         {
             Debug.Log("I CAN SEE THROUGH YOUR LIES");
         }
-            
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
+
     }
     void TestLie2IsClicked()
     {
-      // float Intellegence = Random.value;
         Button btn = TestLie2.GetComponent<Button>();
         if (Random.value < (.5))
         {
@@ -187,11 +239,14 @@ public class OpponentScript : MonoBehaviour
         {
             Debug.Log("I CAN SEE THROUGH YOUR LIES");
         }
-            
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
+
     }
     void TestLie3IsClicked()
     {
-      // float Intellegence = Random.value;
         Button btn = TestLie3.GetComponent<Button>();
         if (Random.value < (.5))
         {
@@ -202,10 +257,13 @@ public class OpponentScript : MonoBehaviour
         {
             Debug.Log("I CAN SEE THROUGH YOUR LIES");
         }
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestLie4IsClicked()
     {
-       //float Intellegence = Random.value;
         Button btn = TestLie4.GetComponent<Button>();
         if (Random.value < (.5))
         { 
@@ -216,11 +274,13 @@ public class OpponentScript : MonoBehaviour
         {
             Debug.Log("I CAN SEE THROUGH YOUR LIES");
         }
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
+        }
     }
     void TestLie5IsClicked()
     {
-        Debug.Log(Random.value);
-        //float Intellegence = Random.value;
         Button btn = TestLie5.GetComponent<Button>();
         if (Random.value < (.5))
         {
@@ -230,6 +290,10 @@ public class OpponentScript : MonoBehaviour
         else
         {
             Debug.Log("I CAN SEE THROUGH YOUR LIES");
+        }
+        if (EnemyHealth < (0))
+        {
+            Debug.Log("YOU WIN!!!");
         }
     }
 }
