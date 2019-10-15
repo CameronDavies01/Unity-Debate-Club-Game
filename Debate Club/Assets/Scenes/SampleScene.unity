@@ -1903,7 +1903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd9764465cd5e7428ff9a26e0b9322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHealth: 100
+  EnemyAudienceApproval: 1000
   TestPoint1: {fileID: 864975409}
   TestPoint2: {fileID: 1092879721}
   TestPoint3: {fileID: 2074168560}
