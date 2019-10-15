@@ -10,8 +10,6 @@ public class OpponentScript : MonoBehaviour
 
     public int PlayerAudienceApproval = 1000;
 
-
-
     // Declares the 15 available attacks to use against your opponent, these are then assigned to buttons 
     public Button TestPoint1;
     public Button TestPoint2;
@@ -35,6 +33,9 @@ public class OpponentScript : MonoBehaviour
     public Button TestLie3;
     public Button TestLie4;
     public Button TestLie5;
+    public Text PlayerTakeDamage;
+    public Text OpponentTakeDamage;
+
 
 
     // Start is called before the first frame update
@@ -62,7 +63,6 @@ public class OpponentScript : MonoBehaviour
         TestLie3.onClick.AddListener(TestLie3IsClicked);
         TestLie4.onClick.AddListener(TestLie4IsClicked);
         TestLie5.onClick.AddListener(TestLie5IsClicked);
-
         TestPoint1.onClick.AddListener(EnemyPoint);
         TestPoint2.onClick.AddListener(EnemyPoint);
         TestPoint3.onClick.AddListener(EnemyPoint);
@@ -83,161 +83,105 @@ public class OpponentScript : MonoBehaviour
         TestLie3.onClick.AddListener(EnemyPoint);
         TestLie4.onClick.AddListener(EnemyPoint);
         TestLie5.onClick.AddListener(EnemyPoint);
+
+       
     }
     // Update is called once per frame
     void Update()
     {
+       
     }
     // Does a specific ammount of damage to the opponent depending on the argument used
     void TestPoint1IsClicked()
     {
-        Button btn = TestPoint1.GetComponent<Button>();
+        
+    Button btn = TestPoint1.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 100;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 100 DAMAGE!!!").ToString();
     }
     void TestPoint2IsClicked()
     {
         Button btn = TestPoint2.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 90;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 90 DAMAGE!!!").ToString();
     }
     void TestPoint3IsClicked()
     {
         Button btn = TestPoint3.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 80;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 80 DAMAGE!!!").ToString();
     }
     void TestPoint4IsClicked()
     {
         Button btn = TestPoint4.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 70;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 70 DAMAGE!!!").ToString();
     }
     void TestPoint5IsClicked()
     {
         Button btn = TestPoint5.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 60;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 60 DAMAGE!!!").ToString();
     }
     void TestPoint6IsClicked()
     {
         Button btn = TestPoint6.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 50;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 50 DAMAGE!!!").ToString();
     }
     void TestPoint7IsClicked()
     {
         Button btn = TestPoint7.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 40;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 40 DAMAGE!!!").ToString();
     }
     void TestPoint8IsClicked()
     {
         Button btn = TestPoint8.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 30;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 30 DAMAGE!!!").ToString();
     }
     void TestPoint9IsClicked()
     {
         Button btn = TestPoint9.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 20;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 20 DAMAGE!!!").ToString();
     }
     void TestPoint10IsClicked()
     {
         Button btn = TestPoint10.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 10;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 10 DAMAGE!!!").ToString();
     }
     void TestPoint11IsClicked()
     {
         Button btn = TestPoint11.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 8;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 8 DAMAGE!!!").ToString();
     }
     void TestPoint12IsClicked()
     {
         Button btn = TestPoint12.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 6;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 6 DAMAGE!!!").ToString();
     }
     void TestPoint13IsClicked()
     {
         Button btn = TestPoint13.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 4;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 4 DAMAGE!!!").ToString();
     }
     void TestPoint14IsClicked()
     {
         Button btn = TestPoint14.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 2;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL 2 DAMAGE!!!").ToString();
     }
     void TestPoint15IsClicked()
     {
         Button btn = TestPoint15.GetComponent<Button>();
         EnemyAudienceApproval = EnemyAudienceApproval - 0;
-        Debug.Log(EnemyAudienceApproval);
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        PlayerTakeDamage.text = ("YOU DEAL NO DAMAGE!!!").ToString();
     }
 
     void TestLie1IsClicked()
@@ -246,17 +190,13 @@ public class OpponentScript : MonoBehaviour
         if (Random.value < (.5))
         {
             EnemyAudienceApproval = EnemyAudienceApproval - 200;
-            Debug.Log(EnemyAudienceApproval);
+            PlayerTakeDamage.text = ("YOU DEAL 200 DAMAGE!!!").ToString();
         }
         else
         {
-            Debug.Log("I CAN SEE THROUGH YOUR LIES");
+            PlayerAudienceApproval = PlayerAudienceApproval - 400;
+            PlayerTakeDamage.text = ("I CAN SEE THROUGH YOUR LIES YOU TAKE 400 DAMAGE").ToString();
         }
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
-
     }
     void TestLie2IsClicked()
     {
@@ -264,17 +204,13 @@ public class OpponentScript : MonoBehaviour
         if (Random.value < (.5))
         {
             EnemyAudienceApproval = EnemyAudienceApproval - 300;
-            Debug.Log(EnemyAudienceApproval);
+            PlayerTakeDamage.text = ("YOU DEAL 300 DAMAGE!!!").ToString();
         }
         else
         {
-            Debug.Log("I CAN SEE THROUGH YOUR LIES");
+            PlayerAudienceApproval = PlayerAudienceApproval - 600;
+            PlayerTakeDamage.text = ("I CAN SEE THROUGH YOUR LIES YOU TAKE 400 DAMAGE").ToString();
         }
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
-
     }
     void TestLie3IsClicked()
     {
@@ -282,15 +218,12 @@ public class OpponentScript : MonoBehaviour
         if (Random.value < (.5))
         {
             EnemyAudienceApproval = EnemyAudienceApproval - 400;
-            Debug.Log(EnemyAudienceApproval);
+            PlayerTakeDamage.text = ("YOU DEAL 400 DAMAGE!!!").ToString();
         }
         else
         {
-            Debug.Log("I CAN SEE THROUGH YOUR LIES");
-        }
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
+            PlayerAudienceApproval = PlayerAudienceApproval - 800;
+            PlayerTakeDamage.text = ("I CAN SEE THROUGH YOUR LIES YOU TAKE 400 DAMAGE").ToString();
         }
     }
     void TestLie4IsClicked()
@@ -299,16 +232,14 @@ public class OpponentScript : MonoBehaviour
         if (Random.value < (.5))
         {
             EnemyAudienceApproval = EnemyAudienceApproval - 500;
-            Debug.Log(EnemyAudienceApproval);
+            PlayerTakeDamage.text = ("YOU DEAL 500 DAMAGE!!!").ToString();
         }
         else
         {
-            Debug.Log("I CAN SEE THROUGH YOUR LIES");
+            PlayerAudienceApproval = PlayerAudienceApproval - 1000;
+            PlayerTakeDamage.text = ("I CAN SEE THROUGH YOUR LIES YOU TAKE 400 DAMAGE").ToString();
         }
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
-        }
+        
     }
     void TestLie5IsClicked()
     {
@@ -316,15 +247,12 @@ public class OpponentScript : MonoBehaviour
         if (Random.value < (.5))
         {
             EnemyAudienceApproval = EnemyAudienceApproval - 600;
-            Debug.Log(EnemyAudienceApproval);
+            PlayerTakeDamage.text = ("YOU DEAL 600 DAMAGE!!! YOU TAKE 400 DAMAGE").ToString();
         }
         else
         {
-            Debug.Log("I CAN SEE THROUGH YOUR LIES");
-        }
-        if (EnemyAudienceApproval < (0))
-        {
-            Debug.Log("YOU WIN!!!");
+            PlayerAudienceApproval = PlayerAudienceApproval - 1200;
+            PlayerTakeDamage.text = ("I CAN SEE THROUGH YOUR LIES").ToString();
         }
     }
     void EnemyPoint()
@@ -334,92 +262,85 @@ public class OpponentScript : MonoBehaviour
         if (RandomAttackGenerator == 1)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 10;
-            Debug.Log("Player E");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 10 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 2)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 20;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 20 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 3)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 30;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 30 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 4)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 40;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 40 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 5)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 50;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 50 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 6)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 60;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 60 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 7)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 70;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 70 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 8)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 80;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 80 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 9)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 90;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 90 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 10)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 100;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 100 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 11)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 110;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 110 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 12)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 120;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 120 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 13)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 130;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 130 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 14)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 140;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 140 DAMAGE!!!").ToString();
         }
         if (RandomAttackGenerator == 15)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 150;
-            Debug.Log("Player");
-            Debug.Log(PlayerAudienceApproval);
+            OpponentTakeDamage.text = ("YOU HAVE TAKEN 150 DAMAGE!!!").ToString();
+        }
+        if (EnemyAudienceApproval < (0))
+        {
+            PlayerTakeDamage.text = ("YOU WIN!!!").ToString();
+        }
+        if (PlayerAudienceApproval < (0))
+        {
+            OpponentTakeDamage.text = ("YOU LOSE!!!").ToString();
         }
 
     }
