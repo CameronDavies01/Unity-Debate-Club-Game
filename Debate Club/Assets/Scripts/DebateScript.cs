@@ -72,7 +72,6 @@ public class DebateScript : MonoBehaviour
             PlayerAudienceApproval = PlayerAudienceApproval + 1;
         }
         PlayerSpeech.text = (RandomConversationStarter + "whether weed is dangerous or not it shouldn’t matter. It’s your body you should be allowed to do what you want with it." + PlayerAudienceApproval).ToString();
-        
     }
     // A timer which makes the UI reappear after an action has taken place after a specific amount of time
     IEnumerator UI_Timer()
