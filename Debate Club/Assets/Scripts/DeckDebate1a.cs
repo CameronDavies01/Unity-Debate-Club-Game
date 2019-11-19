@@ -143,20 +143,128 @@ public class DeckDebate1a : MonoBehaviour
     Text AACon4;
     Text AACon5;
 
+    public Material Material0;
+    public Material Material1;
+    public Material Material2;
+    public Material Material3;
+    public Material Material4;
+    public Material Material5;
+    public Material Material6;
+    public Material Material7;
+    public Material Material8;
+    public Material Material9;
+    public Material Material10;
+    public Material Material11;
+    public Material Material12;
+    public Material Material13;
+    public Material Material14;
+    public Material Material15;
+    public Material Material16;
+    public Material Material17;
+    public Material Material18;
+    public Material Material19;
+    public Material Material20;
+    public Material Material21;
+    public Material Material22;
+    public Material Material23;
+    public Material Material24;
+    public Material Material25;
+    public Material Material26;
+    public Material Material27;
+    public Material Material28;
+    public Material Material29;
+    public Material Material30;
+    public Material Material31;
+    public Material Material32;
+    public Material Material33;
+    public Material Material34;
+    public Material Material35;
+    public Material Material36;
+    public Material Material37;
+    public Material Material38;
+    public Material Material39;
+    public Material Material40;
+    public Material Material41;
+    public Material Material42;
+    public Material Material43;
+    public Material Material44;
+    public Material Material45;
+    public Material Material46;
+    public Material Material47;
+    public Material Material48;
+    public Material Material49;
+    public Material Material50;
+    public Material Material51;
+    public Material Material52;
+    public Material Material53;
+    public Material Material54;
+    public Material Material55;
+    public Material Material56;
+    public Material Material57;
+    public Material Material58;
+    public Material Material59;
+    public Material Material60;
+    public Material Material61;
+    public Material Material62;
+    public Material Material63;
+    public Material Material64;
+    public Material Material65;
+    public Material Material66;
+    public Material Material67;
+    public Material Material68;
+    public Material Material69;
+    public Material Material70;
+    public Material Material71;
+    public Material Material72;
+    public Material Material73;
+    public Material Material74;
+    public Material Material75;
+    public Material Material76;
+    public Material Material77;
+    public Material Material78;
+    public Material Material79;
+    public Material Material80;
+    public Material Material81;
+    public Material Material82;
+    public Material Material83;
+    public Material Material84;
+    public Material Material85;
+    public Material Material86;
+    public Material Material87;
+    public Material Material88;
+    public Material Material89;
+    public Material Material90;
+    public Material Material91;
+    public Material Material92;
+    public Material Material93;
+    public Material Material94;
+    public Material Material95;
+    public Material Material96;
+    public Material Material97;
+    public Material Material98;
+    public Material Material99;
+    public Material Material100;
+
     // This details your current audience approval
-    public int PlayerAudienceApproval = 50;
+    public int PlayerAudienceApproval;
     // This represents the audiences current mood 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
-    public int AudienceMood = 1;
+    public int AudienceMood;
     // This represents the players speech
     public Text PlayerSpeech;
     // This represents the thought bubble
     public Image ThoughtBubble;
 
-    public int CardPosition = 5;
+    public int CardPosition;
+
+    public GameObject Scoreboard;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        AudienceMood = 5;
+        PlayerAudienceApproval = 50;
         Card1 = DCard1;
         Button1 = DButton1;
         CardDescription1 = DCardDescription1;
@@ -202,31 +310,450 @@ public class DeckDebate1a : MonoBehaviour
         AAPro5 = DAAPro5;
         AACon5 = DAACon5;
 
+        CardPosition = 5;
         Button1.onClick.AddListener(Button1Clicked);
         Button2.onClick.AddListener(Button2Clicked);
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
-      
-
     }
 
     // Update is called once per frame
     void Update()
     {
-            transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
+        transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
             transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
             transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
             transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
             transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-    }
 
+        if (PlayerAudienceApproval == 0)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material0;
+        }
+        if (PlayerAudienceApproval == 1)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material1;
+        }
+        if (PlayerAudienceApproval == 2)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material2;
+        }
+        if (PlayerAudienceApproval == 3)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material3;
+        }
+        if (PlayerAudienceApproval == 4)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material4;
+        }
+        if (PlayerAudienceApproval == 5)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material5;
+        }
+        if (PlayerAudienceApproval == 6)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material6;
+        }
+        if (PlayerAudienceApproval == 7)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material7;
+        }
+        if (PlayerAudienceApproval == 8)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material8;
+        }
+        if (PlayerAudienceApproval == 9)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material9;
+        }
+        if (PlayerAudienceApproval == 10)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material10;
+        }
+
+        if (PlayerAudienceApproval == 11)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material11;
+        }
+        if (PlayerAudienceApproval == 12)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material12;
+        }
+        if (PlayerAudienceApproval == 13)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material13;
+        }
+        if (PlayerAudienceApproval == 14)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material14;
+        }
+        if (PlayerAudienceApproval == 15)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material15;
+        }
+        if (PlayerAudienceApproval == 16)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material16;
+        }
+        if (PlayerAudienceApproval == 17)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material17;
+        }
+        if (PlayerAudienceApproval == 18)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material18;
+        }
+        if (PlayerAudienceApproval == 19)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material19;
+        }
+        if (PlayerAudienceApproval == 20)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material20;
+        }
+
+        if (PlayerAudienceApproval == 21)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material21;
+        }
+        if (PlayerAudienceApproval == 22)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material22;
+        }
+        if (PlayerAudienceApproval == 23)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material23;
+        }
+        if (PlayerAudienceApproval == 24)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material24;
+        }
+        if (PlayerAudienceApproval == 25)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material25;
+        }
+        if (PlayerAudienceApproval == 26)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material26;
+        }
+        if (PlayerAudienceApproval == 27)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material27;
+        }
+        if (PlayerAudienceApproval == 28)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material28;
+        }
+        if (PlayerAudienceApproval == 29)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material29;
+        }
+        if (PlayerAudienceApproval == 30)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material30;
+        }
+
+        if (PlayerAudienceApproval == 31)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material31;
+        }
+        if (PlayerAudienceApproval == 32)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material32;
+        }
+        if (PlayerAudienceApproval == 33)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material33;
+        }
+        if (PlayerAudienceApproval == 34)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material34;
+        }
+        if (PlayerAudienceApproval == 35)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material35;
+        }
+        if (PlayerAudienceApproval == 36)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material36;
+        }
+        if (PlayerAudienceApproval == 37)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material37;
+        }
+        if (PlayerAudienceApproval == 38)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material38;
+        }
+        if (PlayerAudienceApproval == 39)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material39;
+        }
+        if (PlayerAudienceApproval == 40)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material40;
+        }
+
+        if (PlayerAudienceApproval == 41)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material41;
+        }
+        if (PlayerAudienceApproval == 42)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material42;
+        }
+        if (PlayerAudienceApproval == 43)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material43;
+        }
+        if (PlayerAudienceApproval == 44)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material44;
+        }
+        if (PlayerAudienceApproval == 45)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material45;
+        }
+        if (PlayerAudienceApproval == 46)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material46;
+        }
+        if (PlayerAudienceApproval == 47)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material47;
+        }
+        if (PlayerAudienceApproval == 48)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material48;
+        }
+        if (PlayerAudienceApproval == 49)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material49;
+        }
+        if (PlayerAudienceApproval == 50)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material50;
+        }
+        if (PlayerAudienceApproval == 51)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material51;
+        }
+        if (PlayerAudienceApproval == 52)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material52;
+        }
+        if (PlayerAudienceApproval == 53)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material53;
+        }
+        if (PlayerAudienceApproval == 54)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material54;
+        }
+        if (PlayerAudienceApproval == 55)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material55;
+        }
+        if (PlayerAudienceApproval == 56)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material56;
+        }
+        if (PlayerAudienceApproval == 57)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material57;
+        }
+        if (PlayerAudienceApproval == 58)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material58;
+        }
+        if (PlayerAudienceApproval == 59)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material59;
+        }
+        if (PlayerAudienceApproval == 60)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material60;
+        }
+        if (PlayerAudienceApproval == 61)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material61;
+        }
+        if (PlayerAudienceApproval == 62)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material62;
+        }
+        if (PlayerAudienceApproval == 63)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material63;
+        }
+        if (PlayerAudienceApproval == 64)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material64;
+        }
+        if (PlayerAudienceApproval == 65)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material65;
+        }
+        if (PlayerAudienceApproval == 66)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material66;
+        }
+        if (PlayerAudienceApproval == 67)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material67;
+        }
+        if (PlayerAudienceApproval == 68)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material68;
+        }
+        if (PlayerAudienceApproval == 69)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material69;
+        }
+
+        if (PlayerAudienceApproval == 70)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material70;
+        }
+        if (PlayerAudienceApproval == 71)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material71;
+        }
+        if (PlayerAudienceApproval == 72)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material72;
+        }
+        if (PlayerAudienceApproval == 73)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material73;
+        }
+        if (PlayerAudienceApproval == 74)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material74;
+        }
+        if (PlayerAudienceApproval == 75)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material75;
+        }
+        if (PlayerAudienceApproval == 76)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material76;
+        }
+        if (PlayerAudienceApproval == 77)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material77;
+        }
+        if (PlayerAudienceApproval == 78)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material78;
+        }
+        if (PlayerAudienceApproval == 79)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material79;
+        }
+
+        if (PlayerAudienceApproval == 80)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material80;
+        }
+        if (PlayerAudienceApproval == 81)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material81;
+        }
+        if (PlayerAudienceApproval == 82)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material82;
+        }
+        if (PlayerAudienceApproval == 83)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material83;
+        }
+        if (PlayerAudienceApproval == 84)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material84;
+        }
+        if (PlayerAudienceApproval == 85)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material85;
+        }
+        if (PlayerAudienceApproval == 86)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material86;
+        }
+        if (PlayerAudienceApproval == 87)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material87;
+        }
+        if (PlayerAudienceApproval == 88)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material88;
+        }
+        if (PlayerAudienceApproval == 89)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material89;
+        }
+
+        if (PlayerAudienceApproval == 90)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material90;
+        }
+        if (PlayerAudienceApproval == 91)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material91;
+        }
+        if (PlayerAudienceApproval == 92)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material92;
+        }
+        if (PlayerAudienceApproval == 93)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material93;
+        }
+        if (PlayerAudienceApproval == 94)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material94;
+        }
+        if (PlayerAudienceApproval == 95)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material95;
+        }
+        if (PlayerAudienceApproval == 96)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material96;
+        }
+        if (PlayerAudienceApproval == 97)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material97;
+        }
+        if (PlayerAudienceApproval == 98)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material98;
+        }
+        if (PlayerAudienceApproval == 99)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material99;
+        }
+        if (PlayerAudienceApproval == 100)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material100;
+        }
+
+    }
     void Button1Clicked()
     {
+        Button1.onClick.RemoveListener(Button1Clicked);
+        Button2.onClick.RemoveListener(Button2Clicked);
+        Button3.onClick.RemoveListener(Button3Clicked);
+        Button4.onClick.RemoveListener(Button4Clicked);
+        Button5.onClick.RemoveListener(Button5Clicked);
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card1.transform.position = new Vector3(100, 100, 100);
-        if (CardPosition == 1) {
+        PlayerSpeech.text = CardDescription1.text.ToString();
+        StartCoroutine(OneAA());
+        if (CardPosition == 1)
+        {
             Card1 = DCard1;
             Button1 = DButton1;
             CardDescription1 = DCardDescription1;
@@ -236,7 +763,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro1;
             AACon1 = DAACon1;
         }
-        if (CardPosition == 2)
+        else if (CardPosition == 2)
         {
             Card1 = DCard2;
             Button1 = DButton2;
@@ -247,7 +774,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro2;
             AACon1 = DAACon2;
         }
-        if (CardPosition == 3)
+        else if (CardPosition == 3)
         {
             Card1 = DCard3;
             Button1 = DButton3;
@@ -258,7 +785,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro3;
             AACon1 = DAACon3;
         }
-        if (CardPosition == 4)
+        else if (CardPosition == 4)
         {
             Card1 = DCard4;
             Button1 = DButton4;
@@ -269,7 +796,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro4;
             AACon1 = DAACon4;
         }
-        if (CardPosition == 5)
+        else if (CardPosition == 5)
         {
             Card1 = DCard5;
             Button1 = DButton5;
@@ -280,7 +807,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro5;
             AACon1 = DAACon5;
         }
-        if (CardPosition == 6)
+        else if (CardPosition == 6)
         {
             Card1 = DCard6;
             Button1 = DButton6;
@@ -291,7 +818,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro6;
             AACon1 = DAACon6;
         }
-        if (CardPosition == 7)
+        else if (CardPosition == 7)
         {
             Card1 = DCard7;
             Button1 = DButton7;
@@ -302,7 +829,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro7;
             AACon1 = DAACon7;
         }
-        if (CardPosition == 8)
+        else if (CardPosition == 8)
         {
             Card1 = DCard8;
             Button1 = DButton8;
@@ -313,7 +840,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro8;
             AACon1 = DAACon8;
         }
-        if (CardPosition == 9)
+        else if (CardPosition == 9)
         {
             Card1 = DCard9;
             Button1 = DButton9;
@@ -324,7 +851,7 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro9;
             AACon1 = DAACon9;
         }
-        if (CardPosition == 10)
+        else if (CardPosition == 10)
         {
             Card1 = DCard10;
             Button1 = DButton10;
@@ -335,34 +862,23 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro10;
             AACon1 = DAACon10;
         }
-
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
-        int TempProMood = int.Parse(EmotionPro1.text);
-        int TempConMood = int.Parse(EmotionCon1.text);
-        if (AudienceMood == TempProMood)
-        {
-            int TempPro = int.Parse(AAPro1.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempPro;
-        }
-        else if (AudienceMood == TempConMood)
-        {
-            int TempCon = int.Parse(AACon1.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempCon; 
-        }
-        else
-        {
-            int Temp = int.Parse(AA1.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + Temp;
-        }
-        PlayerSpeech.text = CardDescription1.text.ToString();
+
     }
 
     void Button2Clicked()
     {
+        Button1.onClick.RemoveListener(Button1Clicked);
+        Button2.onClick.RemoveListener(Button2Clicked);
+        Button3.onClick.RemoveListener(Button3Clicked);
+        Button4.onClick.RemoveListener(Button4Clicked);
+        Button5.onClick.RemoveListener(Button5Clicked);
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card2.transform.position = new Vector3(100, 100, 100);
+        PlayerSpeech.text = CardDescription2.text.ToString();
+        StartCoroutine(TwoAA());
         if (CardPosition == 1)
         {
             Card2 = DCard1;
@@ -476,31 +992,20 @@ public class DeckDebate1a : MonoBehaviour
 
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
-        int TempProMood = int.Parse(EmotionPro2.text);
-        int TempConMood = int.Parse(EmotionCon2.text);
-        if (AudienceMood == TempProMood)
-        {
-            int TempPro = int.Parse(AAPro2.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempPro;
-        }
-        else if (AudienceMood == TempConMood)
-        {
-            int TempCon = int.Parse(AACon2.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempCon;
-        }
-        else
-        {
-            int Temp = int.Parse(AA2.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + Temp;
-        }
-        PlayerSpeech.text = CardDescription2.text.ToString();
     }
 
     void Button3Clicked()
     {
+        Button1.onClick.RemoveListener(Button1Clicked);
+        Button2.onClick.RemoveListener(Button2Clicked);
+        Button3.onClick.RemoveListener(Button3Clicked);
+        Button4.onClick.RemoveListener(Button4Clicked);
+        Button5.onClick.RemoveListener(Button5Clicked);
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card3.transform.position = new Vector3(100, 100, 100);
+        PlayerSpeech.text = CardDescription3.text.ToString();
+        StartCoroutine(ThreeAA());
         if (CardPosition == 1)
         {
             Card3 = DCard1;
@@ -613,31 +1118,20 @@ public class DeckDebate1a : MonoBehaviour
         }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
-        int TempProMood = int.Parse(EmotionPro3.text);
-        int TempConMood = int.Parse(EmotionCon3.text);
-        if (AudienceMood == TempProMood)
-        {
-            int TempPro = int.Parse(AAPro3.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempPro;
-        }
-        else if (AudienceMood == TempConMood)
-        {
-            int TempCon = int.Parse(AACon3.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempCon;
-        }
-        else
-        {
-            int Temp = int.Parse(AA3.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + Temp;
-        }
-        PlayerSpeech.text = CardDescription3.text.ToString();
     }
 
     void Button4Clicked()
     {
+        Button1.onClick.RemoveListener(Button1Clicked);
+        Button2.onClick.RemoveListener(Button2Clicked);
+        Button3.onClick.RemoveListener(Button3Clicked);
+        Button4.onClick.RemoveListener(Button4Clicked);
+        Button5.onClick.RemoveListener(Button5Clicked);
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card4.transform.position = new Vector3(100, 100, 100);
+        PlayerSpeech.text = CardDescription4.text.ToString();
+        StartCoroutine(FourAA());
         if (CardPosition == 1)
         {
             Card4 = DCard1;
@@ -750,31 +1244,20 @@ public class DeckDebate1a : MonoBehaviour
         }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
-        int TempProMood = int.Parse(EmotionPro4.text);
-        int TempConMood = int.Parse(EmotionCon4.text);
-        if (AudienceMood == TempProMood)
-        {
-            int TempPro = int.Parse(AAPro4.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempPro;
-        }
-        else if (AudienceMood == TempConMood)
-        {
-            int TempCon = int.Parse(AACon4.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempCon;
-        }
-        else
-        {
-            int Temp = int.Parse(AA4.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + Temp;
-        }
-        PlayerSpeech.text = CardDescription4.text.ToString();
     }
 
     void Button5Clicked()
     {
+        Button1.onClick.RemoveListener(Button1Clicked);
+        Button2.onClick.RemoveListener(Button2Clicked);
+        Button3.onClick.RemoveListener(Button3Clicked);
+        Button4.onClick.RemoveListener(Button4Clicked);
+        Button5.onClick.RemoveListener(Button5Clicked);
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card5.transform.position = new Vector3(100, 100, 100);
+        PlayerSpeech.text = CardDescription5.text.ToString();
+        StartCoroutine(FiveAA());
         if (CardPosition == 1)
         {
             Card5 = DCard1;
@@ -884,29 +1367,10 @@ public class DeckDebate1a : MonoBehaviour
             AA5 = DAA10;
             AAPro5 = DAAPro10;
             AACon5 = DAACon10;
+
         }
-
-
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
-        int TempProMood = int.Parse(EmotionPro5.text);
-        int TempConMood = int.Parse(EmotionCon5.text);
-        if (AudienceMood == TempProMood)
-        {
-            int TempPro = int.Parse(AAPro5.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempPro;
-        }
-        else if (AudienceMood == TempConMood)
-        {
-            int TempCon = int.Parse(AACon5.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + TempCon;
-        }
-        else
-        {
-            int Temp = int.Parse(AA5.text);
-            PlayerAudienceApproval = PlayerAudienceApproval + Temp;
-        }
-        PlayerSpeech.text = CardDescription1.text.ToString();
     }
 
     IEnumerator UI_Timer()
@@ -914,4 +1378,115 @@ public class DeckDebate1a : MonoBehaviour
     yield return new WaitForSeconds(2);
         ThoughtBubble.gameObject.SetActive(true);
 }
+    IEnumerator OneAA()
+    {
+        yield return new WaitForSeconds(2);
+        if (AudienceMood == int.Parse(EmotionPro1.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro1.text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon1.text))
+        {
+            int TempCon = int.Parse(AACon1.text);
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon1.text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA1.text);
+        }
+        Button1.onClick.AddListener(Button1Clicked);
+        Button2.onClick.AddListener(Button2Clicked);
+        Button3.onClick.AddListener(Button3Clicked);
+        Button4.onClick.AddListener(Button4Clicked);
+        Button5.onClick.AddListener(Button5Clicked);
+    }
+    IEnumerator TwoAA()
+    {
+        yield return new WaitForSeconds(2);
+        if (AudienceMood == int.Parse(EmotionPro2.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro2.text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon2.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon2.text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA2.text);
+        }
+        Button1.onClick.AddListener(Button1Clicked);
+        Button2.onClick.AddListener(Button2Clicked);
+        Button3.onClick.AddListener(Button3Clicked);
+        Button4.onClick.AddListener(Button4Clicked);
+        Button5.onClick.AddListener(Button5Clicked);
+    }
+    IEnumerator ThreeAA()
+    {
+        yield return new WaitForSeconds(2);
+        if (AudienceMood == int.Parse(EmotionPro3.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro3.text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon3.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon3.text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA3.text);
+        }
+        Button1.onClick.AddListener(Button1Clicked);
+        Button2.onClick.AddListener(Button2Clicked);
+        Button3.onClick.AddListener(Button3Clicked);
+        Button4.onClick.AddListener(Button4Clicked);
+        Button5.onClick.AddListener(Button5Clicked);
+
+    }
+    IEnumerator FourAA()
+    {
+        yield return new WaitForSeconds(2);
+        if (AudienceMood == int.Parse(EmotionPro4.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro4.text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon4.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon4.text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA4.text);
+        }
+        PlayerSpeech.text = CardDescription4.text.ToString();
+        Button1.onClick.AddListener(Button1Clicked);
+        Button2.onClick.AddListener(Button2Clicked);
+        Button3.onClick.AddListener(Button3Clicked);
+        Button4.onClick.AddListener(Button4Clicked);
+        Button5.onClick.AddListener(Button5Clicked);
+
+    }
+    IEnumerator FiveAA()
+    {
+        yield return new WaitForSeconds(2);
+        if (AudienceMood == int.Parse(EmotionPro5.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro5.text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon5.text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon5.text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA5.text);
+        }
+        
+        Button1.onClick.AddListener(Button1Clicked);
+        Button2.onClick.AddListener(Button2Clicked);
+        Button3.onClick.AddListener(Button3Clicked);
+        Button4.onClick.AddListener(Button4Clicked);
+        Button5.onClick.AddListener(Button5Clicked);
+    }
+
 }
