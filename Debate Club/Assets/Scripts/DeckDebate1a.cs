@@ -19,6 +19,12 @@ public class DeckDebate1a : MonoBehaviour
     public Image DCard11;
     public Image DCard12;
     public Image DCard13;
+    public Image DCard14;
+    public Image DCard15;
+    public Image DCard16;
+    public Image DCard17;
+    public Image DCard18;
+    public Image DCard19;
 
     public Button DButton1;
     public Button DButton2;
@@ -33,6 +39,12 @@ public class DeckDebate1a : MonoBehaviour
     public Button DButton11;
     public Button DButton12;
     public Button DButton13;
+    public Button DButton14;
+    public Button DButton15;
+    public Button DButton16;
+    public Button DButton17;
+    public Button DButton18;
+    public Button DButton19;
 
     public Text DCardDescription1;
     public Text DCardDescription2;
@@ -47,6 +59,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DCardDescription11;
     public Text DCardDescription12;
     public Text DCardDescription13;
+    public Text DCardDescription14;
+    public Text DCardDescription15;
+    public Text DCardDescription16;
+    public Text DCardDescription17;
+    public Text DCardDescription18;
+    public Text DCardDescription19;
 
     public Text DEmotionPro1;
     public Text DEmotionPro2;
@@ -61,6 +79,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DEmotionPro11;
     public Text DEmotionPro12;
     public Text DEmotionPro13;
+    public Text DEmotionPro14;
+    public Text DEmotionPro15;
+    public Text DEmotionPro16;
+    public Text DEmotionPro17;
+    public Text DEmotionPro18;
+    public Text DEmotionPro19;
 
     public Text DEmotionCon1;
     public Text DEmotionCon2;
@@ -75,6 +99,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DEmotionCon11;
     public Text DEmotionCon12;
     public Text DEmotionCon13;
+    public Text DEmotionCon14;
+    public Text DEmotionCon15;
+    public Text DEmotionCon16;
+    public Text DEmotionCon17;
+    public Text DEmotionCon18;
+    public Text DEmotionCon19;
 
     public Text DAA1;
     public Text DAA2;
@@ -89,6 +119,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAA11;
     public Text DAA12;
     public Text DAA13;
+    public Text DAA14;
+    public Text DAA15;
+    public Text DAA16;
+    public Text DAA17;
+    public Text DAA18;
+    public Text DAA19;
 
     public Text DAAPro1;
     public Text DAAPro2;
@@ -103,6 +139,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAAPro11;
     public Text DAAPro12;
     public Text DAAPro13;
+    public Text DAAPro14;
+    public Text DAAPro15;
+    public Text DAAPro16;
+    public Text DAAPro17;
+    public Text DAAPro18;
+    public Text DAAPro19;
 
     public Text DAACon1;
     public Text DAACon2;
@@ -117,6 +159,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAACon11;
     public Text DAACon12;
     public Text DAACon13;
+    public Text DAACon14;
+    public Text DAACon15;
+    public Text DAACon16;
+    public Text DAACon17;
+    public Text DAACon18;
+    public Text DAACon19;
 
     // The Cards
     Image Card1;
@@ -269,12 +317,6 @@ public class DeckDebate1a : MonoBehaviour
     public Material Material99;
     public Material Material100;
 
-    public Material SeriousMaterial;
-    public Material HumourousMaterial;
-    public Material SadMaterial;
-    public Material PassionateMaterial;
-    public Material AngryMaterial;
-
     // This details your current audience approval
     public int PlayerAudienceApproval;
     // This represents the audiences current mood 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
@@ -294,7 +336,7 @@ public class DeckDebate1a : MonoBehaviour
 
     public GameObject Scoreboard;
 
-    public GameObject Chairs;
+    public Material AudienceMaterial;
 
     public GameObject Deck1;
 
@@ -302,9 +344,13 @@ public class DeckDebate1a : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+
+
+
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
 
@@ -792,23 +838,23 @@ public class DeckDebate1a : MonoBehaviour
 
         if (AudienceMood == 1)
         {
-            Chairs.GetComponent<Renderer>().material = SeriousMaterial;
+            AudienceMaterial.SetColor("_Color", Color.gray);
         }
         if (AudienceMood == 2)
         {
-            Chairs.GetComponent<Renderer>().material = HumourousMaterial;
+            AudienceMaterial.SetColor("_Color", Color.green);
         }
         if (AudienceMood == 3)
         {
-            Chairs.GetComponent<Renderer>().material = SadMaterial;
+            AudienceMaterial.SetColor("_Color", Color.cyan);
         }
         if (AudienceMood == 4)
         {
-            Chairs.GetComponent<Renderer>().material = PassionateMaterial;
+            AudienceMaterial.SetColor("_Color", Color.magenta);
         }
         if (AudienceMood == 5)
         {
-            Chairs.GetComponent<Renderer>().material = AngryMaterial;
+            AudienceMaterial.SetColor("_Color", Color.red);
         }
 }
     void Button1Clicked()
@@ -967,6 +1013,72 @@ public class DeckDebate1a : MonoBehaviour
             AA1 = DAA13;
             AAPro1 = DAAPro13;
             AACon1 = DAACon13;
+        }
+        else if (CardPosition == 14)
+        {
+            Card1 = DCard14;
+            Button1 = DButton14;
+            CardDescription1 = DCardDescription14;
+            EmotionPro1 = DEmotionPro14;
+            EmotionCon1 = DEmotionCon14;
+            AA1 = DAA14;
+            AAPro1 = DAAPro14;
+            AACon1 = DAACon14;
+        }
+        else if (CardPosition == 15)
+        {
+            Card1 = DCard15;
+            Button1 = DButton15;
+            CardDescription1 = DCardDescription15;
+            EmotionPro1 = DEmotionPro15;
+            EmotionCon1 = DEmotionCon15;
+            AA1 = DAA15;
+            AAPro1 = DAAPro15;
+            AACon1 = DAACon15;
+        }
+        else if (CardPosition == 16)
+        {
+            Card1 = DCard16;
+            Button1 = DButton16;
+            CardDescription1 = DCardDescription16;
+            EmotionPro1 = DEmotionPro16;
+            EmotionCon1 = DEmotionCon16;
+            AA1 = DAA16;
+            AAPro1 = DAAPro16;
+            AACon1 = DAACon16;
+        }
+        else if (CardPosition == 17)
+        {
+            Card1 = DCard17;
+            Button1 = DButton17;
+            CardDescription1 = DCardDescription17;
+            EmotionPro1 = DEmotionPro17;
+            EmotionCon1 = DEmotionCon17;
+            AA1 = DAA17;
+            AAPro1 = DAAPro17;
+            AACon1 = DAACon17;
+        }
+        else if (CardPosition == 18)
+        {
+            Card1 = DCard18;
+            Button1 = DButton18;
+            CardDescription1 = DCardDescription18;
+            EmotionPro1 = DEmotionPro18;
+            EmotionCon1 = DEmotionCon18;
+            AA1 = DAA18;
+            AAPro1 = DAAPro18;
+            AACon1 = DAACon18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card1 = DCard19;
+            Button1 = DButton19;
+            CardDescription1 = DCardDescription19;
+            EmotionPro1 = DEmotionPro19;
+            EmotionCon1 = DEmotionCon19;
+            AA1 = DAA19;
+            AAPro1 = DAAPro19;
+            AACon1 = DAACon19;
         }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
@@ -1130,7 +1242,72 @@ public class DeckDebate1a : MonoBehaviour
             AAPro2 = DAAPro13;
             AACon2 = DAACon13;
         }
-
+        else if (CardPosition == 14)
+        {
+            Card2 = DCard14;
+            Button2 = DButton14;
+            CardDescription2 = DCardDescription14;
+            EmotionPro2 = DEmotionPro14;
+            EmotionCon2 = DEmotionCon14;
+            AA2 = DAA14;
+            AAPro2 = DAAPro14;
+            AACon2 = DAACon14;
+        }
+        else if (CardPosition == 15)
+        {
+            Card2 = DCard15;
+            Button2 = DButton15;
+            CardDescription2 = DCardDescription15;
+            EmotionPro2 = DEmotionPro15;
+            EmotionCon2 = DEmotionCon15;
+            AA2 = DAA15;
+            AAPro2 = DAAPro15;
+            AACon2 = DAACon15;
+        }
+        else if (CardPosition == 16)
+        {
+            Card2 = DCard16;
+            Button2 = DButton16;
+            CardDescription2 = DCardDescription16;
+            EmotionPro2 = DEmotionPro16;
+            EmotionCon2 = DEmotionCon16;
+            AA2 = DAA16;
+            AAPro2 = DAAPro16;
+            AACon2 = DAACon16;
+        }
+        else if (CardPosition == 17)
+        {
+            Card2 = DCard17;
+            Button2 = DButton17;
+            CardDescription2 = DCardDescription17;
+            EmotionPro2 = DEmotionPro17;
+            EmotionCon2 = DEmotionCon17;
+            AA2 = DAA17;
+            AAPro2 = DAAPro17;
+            AACon2 = DAACon17;
+        }
+        else if (CardPosition == 18)
+        {
+            Card2 = DCard18;
+            Button2 = DButton18;
+            CardDescription2 = DCardDescription18;
+            EmotionPro2 = DEmotionPro18;
+            EmotionCon2 = DEmotionCon18;
+            AA2 = DAA18;
+            AAPro2 = DAAPro18;
+            AACon2 = DAACon18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card2 = DCard19;
+            Button2 = DButton19;
+            CardDescription2 = DCardDescription19;
+            EmotionPro2 = DEmotionPro19;
+            EmotionCon2 = DEmotionCon19;
+            AA2 = DAA19;
+            AAPro2 = DAAPro19;
+            AACon2 = DAACon19;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
     }
@@ -1291,6 +1468,72 @@ public class DeckDebate1a : MonoBehaviour
             AA3 = DAA13;
             AAPro3 = DAAPro13;
             AACon3 = DAACon13;
+        }
+        else if (CardPosition == 14)
+        {
+            Card3 = DCard14;
+            Button3 = DButton14;
+            CardDescription3 = DCardDescription14;
+            EmotionPro3 = DEmotionPro14;
+            EmotionCon3 = DEmotionCon14;
+            AA3 = DAA14;
+            AAPro3 = DAAPro14;
+            AACon3 = DAACon14;
+        }
+        else if (CardPosition == 15)
+        {
+            Card3 = DCard15;
+            Button3 = DButton15;
+            CardDescription3 = DCardDescription15;
+            EmotionPro3 = DEmotionPro15;
+            EmotionCon3 = DEmotionCon15;
+            AA3 = DAA15;
+            AAPro3 = DAAPro15;
+            AACon3 = DAACon15;
+        }
+        else if (CardPosition == 16)
+        {
+            Card3 = DCard16;
+            Button3 = DButton16;
+            CardDescription3 = DCardDescription16;
+            EmotionPro3 = DEmotionPro16;
+            EmotionCon3 = DEmotionCon16;
+            AA3 = DAA16;
+            AAPro3 = DAAPro16;
+            AACon3 = DAACon16;
+        }
+        else if (CardPosition == 17)
+        {
+            Card3 = DCard17;
+            Button3 = DButton17;
+            CardDescription3 = DCardDescription17;
+            EmotionPro3 = DEmotionPro17;
+            EmotionCon3 = DEmotionCon17;
+            AA3 = DAA17;
+            AAPro3 = DAAPro17;
+            AACon3 = DAACon17;
+        }
+        else if (CardPosition == 18)
+        {
+            Card3 = DCard18;
+            Button3 = DButton18;
+            CardDescription3 = DCardDescription18;
+            EmotionPro3 = DEmotionPro18;
+            EmotionCon3 = DEmotionCon18;
+            AA3 = DAA18;
+            AAPro3 = DAAPro18;
+            AACon3 = DAACon18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card3 = DCard19;
+            Button3 = DButton19;
+            CardDescription3 = DCardDescription19;
+            EmotionPro3 = DEmotionPro19;
+            EmotionCon3 = DEmotionCon19;
+            AA3 = DAA19;
+            AAPro3 = DAAPro19;
+            AACon3 = DAACon19;
         }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
@@ -1453,6 +1696,72 @@ public class DeckDebate1a : MonoBehaviour
             AAPro4 = DAAPro13;
             AACon4 = DAACon13;
         }
+        else if (CardPosition == 14)
+        {
+            Card4 = DCard14;
+            Button4 = DButton14;
+            CardDescription4 = DCardDescription14;
+            EmotionPro4 = DEmotionPro14;
+            EmotionCon4 = DEmotionCon14;
+            AA4 = DAA14;
+            AAPro4 = DAAPro14;
+            AACon4 = DAACon14;
+        }
+        else if (CardPosition == 15)
+        {
+            Card4 = DCard15;
+            Button4 = DButton15;
+            CardDescription4 = DCardDescription15;
+            EmotionPro4 = DEmotionPro15;
+            EmotionCon4 = DEmotionCon15;
+            AA4 = DAA15;
+            AAPro4 = DAAPro15;
+            AACon4 = DAACon15;
+        }
+        else if (CardPosition == 16)
+        {
+            Card4 = DCard16;
+            Button4 = DButton16;
+            CardDescription4 = DCardDescription16;
+            EmotionPro4 = DEmotionPro16;
+            EmotionCon4 = DEmotionCon16;
+            AA4 = DAA16;
+            AAPro4 = DAAPro16;
+            AACon4 = DAACon16;
+        }
+        else if (CardPosition == 17)
+        {
+            Card4 = DCard17;
+            Button4 = DButton17;
+            CardDescription4 = DCardDescription17;
+            EmotionPro4 = DEmotionPro17;
+            EmotionCon4 = DEmotionCon17;
+            AA4 = DAA17;
+            AAPro4 = DAAPro17;
+            AACon4 = DAACon17;
+        }
+        else if (CardPosition == 18)
+        {
+            Card4 = DCard18;
+            Button4 = DButton18;
+            CardDescription4 = DCardDescription18;
+            EmotionPro4 = DEmotionPro18;
+            EmotionCon4 = DEmotionCon18;
+            AA4 = DAA18;
+            AAPro4 = DAAPro18;
+            AACon4 = DAACon18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card4 = DCard19;
+            Button4 = DButton19;
+            CardDescription4 = DCardDescription19;
+            EmotionPro4 = DEmotionPro19;
+            EmotionCon4 = DEmotionCon19;
+            AA4 = DAA19;
+            AAPro4 = DAAPro19;
+            AACon4 = DAACon19;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
     }
@@ -1614,6 +1923,72 @@ public class DeckDebate1a : MonoBehaviour
             AAPro5 = DAAPro13;
             AACon5 = DAACon13;
         }
+        else if (CardPosition == 14)
+        {
+            Card5 = DCard14;
+            Button5 = DButton14;
+            CardDescription5 = DCardDescription14;
+            EmotionPro5 = DEmotionPro14;
+            EmotionCon5 = DEmotionCon14;
+            AA5 = DAA14;
+            AAPro5 = DAAPro14;
+            AACon5 = DAACon14;
+        }
+        else if (CardPosition == 15)
+        {
+            Card5 = DCard15;
+            Button5 = DButton15;
+            CardDescription5 = DCardDescription15;
+            EmotionPro5 = DEmotionPro15;
+            EmotionCon5 = DEmotionCon15;
+            AA5 = DAA15;
+            AAPro5 = DAAPro15;
+            AACon5 = DAACon15;
+        }
+        else if (CardPosition == 16)
+        {
+            Card5 = DCard16;
+            Button5 = DButton16;
+            CardDescription5 = DCardDescription16;
+            EmotionPro5 = DEmotionPro16;
+            EmotionCon5 = DEmotionCon16;
+            AA5 = DAA16;
+            AAPro5 = DAAPro16;
+            AACon5 = DAACon16;
+        }
+        else if (CardPosition == 17)
+        {
+            Card5 = DCard17;
+            Button5 = DButton17;
+            CardDescription5 = DCardDescription17;
+            EmotionPro5 = DEmotionPro17;
+            EmotionCon5 = DEmotionCon17;
+            AA5 = DAA17;
+            AAPro5 = DAAPro17;
+            AACon5 = DAACon17;
+        }
+        else if (CardPosition == 18)
+        {
+            Card5 = DCard18;
+            Button5 = DButton18;
+            CardDescription5 = DCardDescription18;
+            EmotionPro5 = DEmotionPro18;
+            EmotionCon5 = DEmotionCon18;
+            AA5 = DAA18;
+            AAPro5 = DAAPro18;
+            AACon5 = DAACon18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card5 = DCard19;
+            Button5 = DButton19;
+            CardDescription5 = DCardDescription19;
+            EmotionPro5 = DEmotionPro19;
+            EmotionCon5 = DEmotionCon19;
+            AA5 = DAA19;
+            AAPro5 = DAAPro19;
+            AACon5 = DAACon19;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
     }
@@ -1627,59 +2002,81 @@ public class DeckDebate1a : MonoBehaviour
     }
     IEnumerator OpponentReply()
     {
+        // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
+        // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(5);
         SpeechBubble.gameObject.SetActive(false);
         OpponentSpeechBubble.gameObject.SetActive(true);
         WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
         if (WhichOpponentReply == 1)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "Test 1";
+            PlayerAudienceApproval = PlayerAudienceApproval - 2;
+            OpponentSpeech.text = "Marijuana is bad for your brain, lungs, and heart.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 1;
         }
         if (WhichOpponentReply == 2)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 2;
-            OpponentSpeech.text = "Test 2";
+            OpponentSpeech.text = "Weed smokers have a higher risk of developing a mental illness like depression or schizophrenia.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 1;
         }
         if (WhichOpponentReply == 3)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 3;
-            OpponentSpeech.text = "Test 3";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "It's addictive. If it is legal numerous people will suffer financially because they spend all their money on pot. Up to 1 in 10 weed smokers develop a dependency to it over time.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 3;
         }
         if (WhichOpponentReply == 4)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 4;
-            OpponentSpeech.text = "Test 4";
+            PlayerAudienceApproval = PlayerAudienceApproval - 2;
+            OpponentSpeech.text = "It's a gateway drug. Research in New Zealand found regular cannabis users were 60 times more likely to try other illicit drugs than young people who had never smoked cannabis.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 4;
         }
         if (WhichOpponentReply == 5)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 5;
-            OpponentSpeech.text = "Test 5";
+            PlayerAudienceApproval = PlayerAudienceApproval - 3;
+            OpponentSpeech.text = "Research shows that heavy pot-smokers are several times more likely than non-users to commit violent crime.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 1;
         }
         if (WhichOpponentReply == 6)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 6;
-            OpponentSpeech.text = "Test 6";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "Druggies will see it as a chance to try and get worst drugs legalised.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 4;
         }
         if (WhichOpponentReply == 7)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 7;
-            OpponentSpeech.text = "Test 7";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "A study published by Northwestern University in the journal Hippocampus showed, through MRIs, an oddly shaped hippocampus in adolescents who'd used marijuana heavily at ages 16 or 17 for a period of three years. The hippocampus is the region of the brain most responsible for short- and long-term memory. Not surprisingly, there was also an accompanied average long-term memory test score reduction of 18% for heavy users compared with those who'd not used marijuana before. ";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 5;
         }
         if (WhichOpponentReply == 8)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 8;
-            OpponentSpeech.text = "Test 8";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "There aren't adequate parameters to police marijuana use. The government is so slow how long would it take to put these in place?";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 2;
         }
         if (WhichOpponentReply == 9)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 9;
-            OpponentSpeech.text = "Test 9";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "A lot of land would have to be used to grow weed which could be used to grow more important things.";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 5;
         }
         if (WhichOpponentReply == 10)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 10;
-            OpponentSpeech.text = "Test 10";
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "Imagine all the wasted electricity being used to weed. A 2012 study from scientist Evan Mills, Ph.D., at the Lawrence Berkeley National Laboratory found that legal indoor marijuana growing farms were accounting for 1% of our nation's electricity usage, totaling about $6 billion a year. ";
+            yield return new WaitForSeconds(1);
+            AudienceMood = 5;
         }
     }
     IEnumerator OneAA()
