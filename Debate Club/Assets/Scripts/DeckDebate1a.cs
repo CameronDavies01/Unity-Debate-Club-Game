@@ -16,6 +16,9 @@ public class DeckDebate1a : MonoBehaviour
     public Image DCard8;
     public Image DCard9;
     public Image DCard10;
+    public Image DCard11;
+    public Image DCard12;
+    public Image DCard13;
 
     public Button DButton1;
     public Button DButton2;
@@ -27,6 +30,9 @@ public class DeckDebate1a : MonoBehaviour
     public Button DButton8;
     public Button DButton9;
     public Button DButton10;
+    public Button DButton11;
+    public Button DButton12;
+    public Button DButton13;
 
     public Text DCardDescription1;
     public Text DCardDescription2;
@@ -38,6 +44,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DCardDescription8;
     public Text DCardDescription9;
     public Text DCardDescription10;
+    public Text DCardDescription11;
+    public Text DCardDescription12;
+    public Text DCardDescription13;
 
     public Text DEmotionPro1;
     public Text DEmotionPro2;
@@ -49,6 +58,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DEmotionPro8;
     public Text DEmotionPro9;
     public Text DEmotionPro10;
+    public Text DEmotionPro11;
+    public Text DEmotionPro12;
+    public Text DEmotionPro13;
 
     public Text DEmotionCon1;
     public Text DEmotionCon2;
@@ -60,6 +72,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DEmotionCon8;
     public Text DEmotionCon9;
     public Text DEmotionCon10;
+    public Text DEmotionCon11;
+    public Text DEmotionCon12;
+    public Text DEmotionCon13;
 
     public Text DAA1;
     public Text DAA2;
@@ -71,6 +86,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAA8;
     public Text DAA9;
     public Text DAA10;
+    public Text DAA11;
+    public Text DAA12;
+    public Text DAA13;
 
     public Text DAAPro1;
     public Text DAAPro2;
@@ -82,6 +100,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAAPro8;
     public Text DAAPro9;
     public Text DAAPro10;
+    public Text DAAPro11;
+    public Text DAAPro12;
+    public Text DAAPro13;
 
     public Text DAACon1;
     public Text DAACon2;
@@ -93,6 +114,9 @@ public class DeckDebate1a : MonoBehaviour
     public Text DAACon8;
     public Text DAACon9;
     public Text DAACon10;
+    public Text DAACon11;
+    public Text DAACon12;
+    public Text DAACon13;
 
     // The Cards
     Image Card1;
@@ -245,6 +269,12 @@ public class DeckDebate1a : MonoBehaviour
     public Material Material99;
     public Material Material100;
 
+    public Material SeriousMaterial;
+    public Material HumourousMaterial;
+    public Material SadMaterial;
+    public Material PassionateMaterial;
+    public Material AngryMaterial;
+
     // This details your current audience approval
     public int PlayerAudienceApproval;
     // This represents the audiences current mood 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
@@ -254,9 +284,21 @@ public class DeckDebate1a : MonoBehaviour
     // This represents the thought bubble
     public Image ThoughtBubble;
 
+    public Image SpeechBubble;
+
+    public Image OpponentSpeechBubble;
+
+    public Text OpponentSpeech;
+
     public int CardPosition;
 
     public GameObject Scoreboard;
+
+    public GameObject Chairs;
+
+    public GameObject Deck1;
+
+    public float WhichOpponentReply;
 
 
 
@@ -265,6 +307,7 @@ public class DeckDebate1a : MonoBehaviour
     {
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
+
         Card1 = DCard1;
         Button1 = DButton1;
         CardDescription1 = DCardDescription1;
@@ -322,11 +365,15 @@ public class DeckDebate1a : MonoBehaviour
     void Update()
     {
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
-            transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
-            transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
-            transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
-            transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
+        transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
+        transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
+        transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
+        transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
 
+        if (PlayerAudienceApproval < 0)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material0;
+        }
         if (PlayerAudienceApproval == 0)
         {
             Scoreboard.GetComponent<Renderer>().material = Material0;
@@ -738,8 +785,32 @@ public class DeckDebate1a : MonoBehaviour
         {
             Scoreboard.GetComponent<Renderer>().material = Material100;
         }
+        if (PlayerAudienceApproval > 100)
+        {
+            Scoreboard.GetComponent<Renderer>().material = Material100;
+        }
 
-    }
+        if (AudienceMood == 1)
+        {
+            Chairs.GetComponent<Renderer>().material = SeriousMaterial;
+        }
+        if (AudienceMood == 2)
+        {
+            Chairs.GetComponent<Renderer>().material = HumourousMaterial;
+        }
+        if (AudienceMood == 3)
+        {
+            Chairs.GetComponent<Renderer>().material = SadMaterial;
+        }
+        if (AudienceMood == 4)
+        {
+            Chairs.GetComponent<Renderer>().material = PassionateMaterial;
+        }
+        if (AudienceMood == 5)
+        {
+            Chairs.GetComponent<Renderer>().material = AngryMaterial;
+        }
+}
     void Button1Clicked()
     {
         Button1.onClick.RemoveListener(Button1Clicked);
@@ -750,7 +821,9 @@ public class DeckDebate1a : MonoBehaviour
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card1.transform.position = new Vector3(100, 100, 100);
+        Deck1.gameObject.SetActive(false);
         PlayerSpeech.text = CardDescription1.text.ToString();
+        SpeechBubble.gameObject.SetActive(true);
         StartCoroutine(OneAA());
         if (CardPosition == 1)
         {
@@ -862,6 +935,39 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro10;
             AACon1 = DAACon10;
         }
+        else if (CardPosition == 11)
+        {
+            Card1 = DCard11;
+            Button1 = DButton11;
+            CardDescription1 = DCardDescription11;
+            EmotionPro1 = DEmotionPro11;
+            EmotionCon1 = DEmotionCon11;
+            AA1 = DAA11;
+            AAPro1 = DAAPro11;
+            AACon1 = DAACon11;
+        }
+        else if (CardPosition == 12)
+        {
+            Card1 = DCard12;
+            Button1 = DButton12;
+            CardDescription1 = DCardDescription12;
+            EmotionPro1 = DEmotionPro12;
+            EmotionCon1 = DEmotionCon12;
+            AA1 = DAA12;
+            AAPro1 = DAAPro12;
+            AACon1 = DAACon12;
+        }
+        else if (CardPosition == 13)
+        {
+            Card1 = DCard13;
+            Button1 = DButton13;
+            CardDescription1 = DCardDescription13;
+            EmotionPro1 = DEmotionPro13;
+            EmotionCon1 = DEmotionCon13;
+            AA1 = DAA13;
+            AAPro1 = DAAPro13;
+            AACon1 = DAACon13;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
 
@@ -877,6 +983,8 @@ public class DeckDebate1a : MonoBehaviour
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card2.transform.position = new Vector3(100, 100, 100);
+        SpeechBubble.gameObject.SetActive(true);
+        Deck1.gameObject.SetActive(false);
         PlayerSpeech.text = CardDescription2.text.ToString();
         StartCoroutine(TwoAA());
         if (CardPosition == 1)
@@ -989,6 +1097,39 @@ public class DeckDebate1a : MonoBehaviour
             AAPro2 = DAAPro10;
             AACon2 = DAACon10;
         }
+        else if (CardPosition == 11)
+        {
+            Card2 = DCard11;
+            Button2 = DButton11;
+            CardDescription2 = DCardDescription11;
+            EmotionPro2 = DEmotionPro11;
+            EmotionCon2 = DEmotionCon11;
+            AA2 = DAA11;
+            AAPro2 = DAAPro11;
+            AACon2 = DAACon11;
+        }
+        else if (CardPosition == 12)
+        {
+            Card2 = DCard12;
+            Button2 = DButton12;
+            CardDescription2 = DCardDescription12;
+            EmotionPro2 = DEmotionPro12;
+            EmotionCon2 = DEmotionCon12;
+            AA2 = DAA12;
+            AAPro2 = DAAPro12;
+            AACon2 = DAACon12;
+        }
+        else if (CardPosition == 13)
+        {
+            Card2 = DCard13;
+            Button2 = DButton13;
+            CardDescription2 = DCardDescription13;
+            EmotionPro2 = DEmotionPro13;
+            EmotionCon2 = DEmotionCon13;
+            AA2 = DAA13;
+            AAPro2 = DAAPro13;
+            AACon2 = DAACon13;
+        }
 
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
@@ -1004,6 +1145,8 @@ public class DeckDebate1a : MonoBehaviour
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card3.transform.position = new Vector3(100, 100, 100);
+        SpeechBubble.gameObject.SetActive(true);
+        Deck1.gameObject.SetActive(false);
         PlayerSpeech.text = CardDescription3.text.ToString();
         StartCoroutine(ThreeAA());
         if (CardPosition == 1)
@@ -1116,6 +1259,39 @@ public class DeckDebate1a : MonoBehaviour
             AAPro3 = DAAPro10;
             AACon3 = DAACon10;
         }
+        if (CardPosition == 11)
+        {
+            Card3 = DCard11;
+            Button3 = DButton11;
+            CardDescription3 = DCardDescription11;
+            EmotionPro3 = DEmotionPro11;
+            EmotionCon3 = DEmotionCon11;
+            AA3 = DAA11;
+            AAPro3 = DAAPro11;
+            AACon3 = DAACon11;
+        }
+        if (CardPosition == 12)
+        {
+            Card3 = DCard12;
+            Button3 = DButton12;
+            CardDescription3 = DCardDescription12;
+            EmotionPro3 = DEmotionPro12;
+            EmotionCon3 = DEmotionCon12;
+            AA3 = DAA12;
+            AAPro3 = DAAPro12;
+            AACon3 = DAACon12;
+        }
+        if (CardPosition == 13)
+        {
+            Card3 = DCard13;
+            Button3 = DButton13;
+            CardDescription3 = DCardDescription13;
+            EmotionPro3 = DEmotionPro13;
+            EmotionCon3 = DEmotionCon13;
+            AA3 = DAA13;
+            AAPro3 = DAAPro13;
+            AACon3 = DAACon13;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
     }
@@ -1130,6 +1306,8 @@ public class DeckDebate1a : MonoBehaviour
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card4.transform.position = new Vector3(100, 100, 100);
+        SpeechBubble.gameObject.SetActive(true);
+        Deck1.gameObject.SetActive(false);
         PlayerSpeech.text = CardDescription4.text.ToString();
         StartCoroutine(FourAA());
         if (CardPosition == 1)
@@ -1242,6 +1420,39 @@ public class DeckDebate1a : MonoBehaviour
             AAPro4 = DAAPro10;
             AACon4 = DAACon10;
         }
+        if (CardPosition == 11)
+        {
+            Card4 = DCard11;
+            Button4 = DButton11;
+            CardDescription4 = DCardDescription11;
+            EmotionPro4 = DEmotionPro11;
+            EmotionCon4 = DEmotionCon11;
+            AA4 = DAA11;
+            AAPro4 = DAAPro11;
+            AACon4 = DAACon11;
+        }
+        if (CardPosition == 12)
+        {
+            Card4 = DCard12;
+            Button4 = DButton12;
+            CardDescription4 = DCardDescription12;
+            EmotionPro4 = DEmotionPro12;
+            EmotionCon4 = DEmotionCon12;
+            AA4 = DAA12;
+            AAPro4 = DAAPro12;
+            AACon4 = DAACon12;
+        }
+        if (CardPosition == 13)
+        {
+            Card4 = DCard13;
+            Button4 = DButton13;
+            CardDescription4 = DCardDescription13;
+            EmotionPro4 = DEmotionPro13;
+            EmotionCon4 = DEmotionCon13;
+            AA4 = DAA13;
+            AAPro4 = DAAPro13;
+            AACon4 = DAACon13;
+        }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
     }
@@ -1256,6 +1467,8 @@ public class DeckDebate1a : MonoBehaviour
         StartCoroutine(UI_Timer());
         CardPosition = CardPosition + 1;
         transform.position = Card5.transform.position = new Vector3(100, 100, 100);
+        SpeechBubble.gameObject.SetActive(true);
+        Deck1.gameObject.SetActive(false);
         PlayerSpeech.text = CardDescription5.text.ToString();
         StartCoroutine(FiveAA());
         if (CardPosition == 1)
@@ -1367,7 +1580,39 @@ public class DeckDebate1a : MonoBehaviour
             AA5 = DAA10;
             AAPro5 = DAAPro10;
             AACon5 = DAACon10;
-
+        }
+        if (CardPosition == 11)
+        {
+            Card5 = DCard11;
+            Button5 = DButton11;
+            CardDescription5 = DCardDescription11;
+            EmotionPro5 = DEmotionPro11;
+            EmotionCon5 = DEmotionCon11;
+            AA5 = DAA11;
+            AAPro5 = DAAPro11;
+            AACon5 = DAACon11;
+        }
+        if (CardPosition == 12)
+        {
+            Card5 = DCard12;
+            Button5 = DButton12;
+            CardDescription5 = DCardDescription12;
+            EmotionPro5 = DEmotionPro12;
+            EmotionCon5 = DEmotionCon12;
+            AA5 = DAA12;
+            AAPro5 = DAAPro12;
+            AACon5 = DAACon12;
+        }
+        if (CardPosition == 13)
+        {
+            Card5 = DCard13;
+            Button5 = DButton13;
+            CardDescription5 = DCardDescription13;
+            EmotionPro5 = DEmotionPro13;
+            EmotionCon5 = DEmotionCon13;
+            AA5 = DAA13;
+            AAPro5 = DAAPro13;
+            AACon5 = DAACon13;
         }
         // Turns off the thought bubble
         ThoughtBubble.gameObject.SetActive(false);
@@ -1375,34 +1620,94 @@ public class DeckDebate1a : MonoBehaviour
 
     IEnumerator UI_Timer()
 {
-    yield return new WaitForSeconds(2);
+    yield return new WaitForSeconds(10);
         ThoughtBubble.gameObject.SetActive(true);
-}
+        OpponentSpeechBubble.gameObject.SetActive(false);
+        Deck1.gameObject.SetActive(true);
+    }
+    IEnumerator OpponentReply()
+    {
+        yield return new WaitForSeconds(5);
+        SpeechBubble.gameObject.SetActive(false);
+        OpponentSpeechBubble.gameObject.SetActive(true);
+        WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
+        if (WhichOpponentReply == 1)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 1;
+            OpponentSpeech.text = "Test 1";
+        }
+        if (WhichOpponentReply == 2)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 2;
+            OpponentSpeech.text = "Test 2";
+        }
+        if (WhichOpponentReply == 3)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 3;
+            OpponentSpeech.text = "Test 3";
+        }
+        if (WhichOpponentReply == 4)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 4;
+            OpponentSpeech.text = "Test 4";
+        }
+        if (WhichOpponentReply == 5)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 5;
+            OpponentSpeech.text = "Test 5";
+        }
+        if (WhichOpponentReply == 6)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 6;
+            OpponentSpeech.text = "Test 6";
+        }
+        if (WhichOpponentReply == 7)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 7;
+            OpponentSpeech.text = "Test 7";
+        }
+        if (WhichOpponentReply == 8)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 8;
+            OpponentSpeech.text = "Test 8";
+        }
+        if (WhichOpponentReply == 9)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 9;
+            OpponentSpeech.text = "Test 9";
+        }
+        if (WhichOpponentReply == 10)
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval - 10;
+            OpponentSpeech.text = "Test 10";
+        }
+    }
     IEnumerator OneAA()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (AudienceMood == int.Parse(EmotionPro1.text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro1.text);
         }
         else if (AudienceMood == int.Parse(EmotionCon1.text))
         {
-            int TempCon = int.Parse(AACon1.text);
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AACon1.text);
         }
         else
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA1.text);
         }
+        
         Button1.onClick.AddListener(Button1Clicked);
         Button2.onClick.AddListener(Button2Clicked);
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
+        StartCoroutine(OpponentReply());
     }
     IEnumerator TwoAA()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (AudienceMood == int.Parse(EmotionPro2.text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro2.text);
@@ -1420,10 +1725,11 @@ public class DeckDebate1a : MonoBehaviour
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
+        StartCoroutine(OpponentReply());
     }
     IEnumerator ThreeAA()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (AudienceMood == int.Parse(EmotionPro3.text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro3.text);
@@ -1441,11 +1747,11 @@ public class DeckDebate1a : MonoBehaviour
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
-
+        StartCoroutine(OpponentReply());
     }
     IEnumerator FourAA()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (AudienceMood == int.Parse(EmotionPro4.text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro4.text);
@@ -1458,17 +1764,16 @@ public class DeckDebate1a : MonoBehaviour
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA4.text);
         }
-        PlayerSpeech.text = CardDescription4.text.ToString();
         Button1.onClick.AddListener(Button1Clicked);
         Button2.onClick.AddListener(Button2Clicked);
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
-
+        StartCoroutine(OpponentReply());
     }
     IEnumerator FiveAA()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (AudienceMood == int.Parse(EmotionPro5.text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AAPro5.text);
@@ -1481,12 +1786,11 @@ public class DeckDebate1a : MonoBehaviour
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AA5.text);
         }
-        
         Button1.onClick.AddListener(Button1Clicked);
         Button2.onClick.AddListener(Button2Clicked);
         Button3.onClick.AddListener(Button3Clicked);
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
+        StartCoroutine(OpponentReply());
     }
-
 }
