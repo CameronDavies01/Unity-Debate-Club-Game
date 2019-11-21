@@ -342,15 +342,14 @@ public class DeckDebate1a : MonoBehaviour
 
     public float WhichOpponentReply;
 
+    public Text EndState;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-
-
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
 
@@ -419,10 +418,12 @@ public class DeckDebate1a : MonoBehaviour
         if (PlayerAudienceApproval < 0)
         {
             Scoreboard.GetComponent<Renderer>().material = Material0;
+            StartCoroutine(YouLose());
         }
         if (PlayerAudienceApproval == 0)
         {
             Scoreboard.GetComponent<Renderer>().material = Material0;
+            StartCoroutine(YouLose());
         }
         if (PlayerAudienceApproval == 1)
         {
@@ -830,10 +831,13 @@ public class DeckDebate1a : MonoBehaviour
         if (PlayerAudienceApproval == 100)
         {
             Scoreboard.GetComponent<Renderer>().material = Material100;
+            StartCoroutine(YouWin());
         }
         if (PlayerAudienceApproval > 100)
         {
             Scoreboard.GetComponent<Renderer>().material = Material100;
+            StartCoroutine(YouWin());
+
         }
 
         if (AudienceMood == 1)
@@ -855,6 +859,11 @@ public class DeckDebate1a : MonoBehaviour
         if (AudienceMood == 5)
         {
             AudienceMaterial.SetColor("_Color", Color.red);
+        }
+
+        if (CardPosition > 19)
+        {
+            CardPosition = 1;
         }
 }
     void Button1Clicked()
@@ -1080,8 +1089,8 @@ public class DeckDebate1a : MonoBehaviour
             AAPro1 = DAAPro19;
             AACon1 = DAACon19;
         }
-        // Turns off the thought bubble
-        ThoughtBubble.gameObject.SetActive(false);
+            // Turns off the thought bubble
+            ThoughtBubble.gameObject.SetActive(false);
 
     }
 
@@ -2189,5 +2198,39 @@ public class DeckDebate1a : MonoBehaviour
         Button4.onClick.AddListener(Button4Clicked);
         Button5.onClick.AddListener(Button5Clicked);
         StartCoroutine(OpponentReply());
+    }
+    IEnumerator YouWin()
+    {
+        yield return new WaitForSeconds(1);
+        EndState.text = "YOU WIN";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 5";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 4";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 3";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 2";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 1";
+        yield return new WaitForSeconds(1);
+        Application.LoadLevel(0);
+    }
+    IEnumerator YouLose()
+    {
+        yield return new WaitForSeconds(1);
+        EndState.text = "YOU LOSE";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 5";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 4";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 3";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 2";
+        yield return new WaitForSeconds(1);
+        EndState.text = "Resetting In 1";
+        yield return new WaitForSeconds(1);
+        Application.LoadLevel(0);
     }
 }
