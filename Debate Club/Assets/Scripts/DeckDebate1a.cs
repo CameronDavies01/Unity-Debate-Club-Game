@@ -13,6 +13,7 @@ public class DeckDebate1a : MonoBehaviour
     GameObject AudienceResponsePro;
     GameObject AudienceResponseCon;
 
+
     public GameObject DCard1;
     public GameObject DCard2;
     public GameObject DCard3;
@@ -52,126 +53,6 @@ public class DeckDebate1a : MonoBehaviour
     public Button DButton17;
     public Button DButton18;
     public Button DButton19;
-
-    public Text DCardDescription1;
-    public Text DCardDescription2;
-    public Text DCardDescription3;
-    public Text DCardDescription4;
-    public Text DCardDescription5;
-    public Text DCardDescription6;
-    public Text DCardDescription7;
-    public Text DCardDescription8;
-    public Text DCardDescription9;
-    public Text DCardDescription10;
-    public Text DCardDescription11;
-    public Text DCardDescription12;
-    public Text DCardDescription13;
-    public Text DCardDescription14;
-    public Text DCardDescription15;
-    public Text DCardDescription16;
-    public Text DCardDescription17;
-    public Text DCardDescription18;
-    public Text DCardDescription19;
-
-    public Text DEmotionPro1;
-    public Text DEmotionPro2;
-    public Text DEmotionPro3;
-    public Text DEmotionPro4;
-    public Text DEmotionPro5;
-    public Text DEmotionPro6;
-    public Text DEmotionPro7;
-    public Text DEmotionPro8;
-    public Text DEmotionPro9;
-    public Text DEmotionPro10;
-    public Text DEmotionPro11;
-    public Text DEmotionPro12;
-    public Text DEmotionPro13;
-    public Text DEmotionPro14;
-    public Text DEmotionPro15;
-    public Text DEmotionPro16;
-    public Text DEmotionPro17;
-    public Text DEmotionPro18;
-    public Text DEmotionPro19;
-
-    public Text DEmotionCon1;
-    public Text DEmotionCon2;
-    public Text DEmotionCon3;
-    public Text DEmotionCon4;
-    public Text DEmotionCon5;
-    public Text DEmotionCon6;
-    public Text DEmotionCon7;
-    public Text DEmotionCon8;
-    public Text DEmotionCon9;
-    public Text DEmotionCon10;
-    public Text DEmotionCon11;
-    public Text DEmotionCon12;
-    public Text DEmotionCon13;
-    public Text DEmotionCon14;
-    public Text DEmotionCon15;
-    public Text DEmotionCon16;
-    public Text DEmotionCon17;
-    public Text DEmotionCon18;
-    public Text DEmotionCon19;
-
-    public Text DAA1;
-    public Text DAA2;
-    public Text DAA3;
-    public Text DAA4;
-    public Text DAA5;
-    public Text DAA6;
-    public Text DAA7;
-    public Text DAA8;
-    public Text DAA9;
-    public Text DAA10;
-    public Text DAA11;
-    public Text DAA12;
-    public Text DAA13;
-    public Text DAA14;
-    public Text DAA15;
-    public Text DAA16;
-    public Text DAA17;
-    public Text DAA18;
-    public Text DAA19;
-
-    public Text DAAPro1;
-    public Text DAAPro2;
-    public Text DAAPro3;
-    public Text DAAPro4;
-    public Text DAAPro5;
-    public Text DAAPro6;
-    public Text DAAPro7;
-    public Text DAAPro8;
-    public Text DAAPro9;
-    public Text DAAPro10;
-    public Text DAAPro11;
-    public Text DAAPro12;
-    public Text DAAPro13;
-    public Text DAAPro14;
-    public Text DAAPro15;
-    public Text DAAPro16;
-    public Text DAAPro17;
-    public Text DAAPro18;
-    public Text DAAPro19;
-
-    public Text DAACon1;
-    public Text DAACon2;
-    public Text DAACon3;
-    public Text DAACon4;
-    public Text DAACon5;
-    public Text DAACon6;
-    public Text DAACon7;
-    public Text DAACon8;
-    public Text DAACon9;
-    public Text DAACon10;
-    public Text DAACon11;
-    public Text DAACon12;
-    public Text DAACon13;
-    public Text DAACon14;
-    public Text DAACon15;
-    public Text DAACon16;
-    public Text DAACon17;
-    public Text DAACon18;
-    public Text DAACon19;
 
     // The Cards
     GameObject Card1;
@@ -290,6 +171,11 @@ public class DeckDebate1a : MonoBehaviour
     public Material Material99;
     public Material Material100;
 
+    public AudioSource YoureWrong;
+    public AudioSource YoureOn;
+    public AudioSource MaybeImWrong;
+    public AudioSource MaleVoice1;
+
     // This details your current audience approval
     public int PlayerAudienceApproval;
     // This represents the audiences current mood 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
@@ -324,6 +210,12 @@ public class DeckDebate1a : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        YoureOn.Play();
+        MaybeImWrong.Play();
+        YoureWrong.Play();
+        YoureOn.mute = true;
+        MaybeImWrong.mute = true;
+        YoureWrong.mute = true;
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
         Card1 = DCard1;
@@ -776,8 +668,26 @@ public class DeckDebate1a : MonoBehaviour
         {
             Scoreboard.GetComponent<Renderer>().material = Material100;
             StartCoroutine(YouWin());
-
         }
+        if (PlayerAudienceApproval > 75)
+            {
+            YoureWrong.mute = false;
+            YoureOn.mute = true;
+            MaybeImWrong.mute = true;
+        }
+        else if (PlayerAudienceApproval < 25)
+        {
+            YoureWrong.mute = true;
+            YoureOn.mute = true;
+            MaybeImWrong.mute = false;
+        }
+        else
+        {
+            YoureWrong.mute = true;
+            YoureOn.mute = false;
+            MaybeImWrong.mute = true;
+        }
+
         if (AudienceMood == 1)
         {
             AudienceMaterial.SetColor("_Color", Color.gray);
@@ -1559,6 +1469,7 @@ public class DeckDebate1a : MonoBehaviour
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
         // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
+        MaleVoice1.Play();
         SpeechBubble.gameObject.SetActive(false);
         OpponentSpeechBubble.gameObject.SetActive(true);
         WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
@@ -1634,6 +1545,7 @@ public class DeckDebate1a : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1);
+        MaleVoice1.Pause();
         ThoughtBubble.gameObject.SetActive(true);
         OpponentSpeechBubble.gameObject.SetActive(false);
         Deck1.gameObject.SetActive(true);
