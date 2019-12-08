@@ -13,46 +13,39 @@ public class DeckDebate1a : MonoBehaviour
     GameObject AudienceResponsePro;
     GameObject AudienceResponseCon;
 
+    public GameObject PlayerSpotlight;
+    public GameObject OpponentSpotlight;
 
-    public GameObject DCard1;
-    public GameObject DCard2;
-    public GameObject DCard3;
-    public GameObject DCard4;
-    public GameObject DCard5;
-    public GameObject DCard6;
-    public GameObject DCard7;
-    public GameObject DCard8;
-    public GameObject DCard9;
-    public GameObject DCard10;
-    public GameObject DCard11;
-    public GameObject DCard12;
-    public GameObject DCard13;
-    public GameObject DCard14;
-    public GameObject DCard15;
-    public GameObject DCard16;
-    public GameObject DCard17;
-    public GameObject DCard18;
-    public GameObject DCard19;
+    public GameObject QM1;
+    public GameObject QM2;
+    public GameObject QM3;
+    public GameObject QM4;
+    public GameObject QM5;
+    public GameObject QM6;
 
-    public Button DButton1;
-    public Button DButton2;
-    public Button DButton3;
-    public Button DButton4;
-    public Button DButton5;
-    public Button DButton6;
-    public Button DButton7;
-    public Button DButton8;
-    public Button DButton9;
-    public Button DButton10;
-    public Button DButton11;
-    public Button DButton12;
-    public Button DButton13;
-    public Button DButton14;
-    public Button DButton15;
-    public Button DButton16;
-    public Button DButton17;
-    public Button DButton18;
-    public Button DButton19;
+    public ParticleSystem PlayerDamaged;
+    public ParticleSystem OpponentDamaged;
+
+    GameObject DCard1;
+    GameObject DCard2;
+    GameObject DCard3;
+    GameObject DCard4;
+     GameObject DCard5;
+     GameObject DCard6;
+     GameObject DCard7;
+     GameObject DCard8;
+     GameObject DCard9;
+     GameObject DCard10;
+     GameObject DCard11;
+     GameObject DCard12;
+     GameObject DCard13;
+     GameObject DCard14;
+     GameObject DCard15;
+     GameObject DCard16;
+     GameObject DCard17;
+     GameObject DCard18;
+     GameObject DCard19;
+
 
     // The Cards
     GameObject Card1;
@@ -60,14 +53,6 @@ public class DeckDebate1a : MonoBehaviour
     GameObject Card3;
     GameObject Card4;
     GameObject Card5;
-
-    Button Button1;
-    Button Button2;
-    Button Button3;
-    Button Button4;
-    Button Button5;
-
-    
 
     public Material Material0;
     public Material Material1;
@@ -175,6 +160,13 @@ public class DeckDebate1a : MonoBehaviour
     public AudioSource YoureOn;
     public AudioSource MaybeImWrong;
     public AudioSource MaleVoice1;
+    public AudioSource MaleVoice2;
+
+    Button CardButton1;
+    Button CardButton2;
+    Button CardButton3;
+    Button CardButton4;
+    Button CardButton5;
 
     // This details your current audience approval
     public int PlayerAudienceApproval;
@@ -203,13 +195,135 @@ public class DeckDebate1a : MonoBehaviour
 
     public Text EndState;
 
-
-
+    public int TalkCheck;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        List<int> CardShuffle = new List<int>(); 
+
+        for (int c = 0; c < 19; c++)
+        {
+            CardShuffle.Add(c);
+        }
+        int index;
+        int i;
+        index = Random.Range(0, CardShuffle.Count - 1);  
+        i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard1 = GameObject.Find(i.ToString());
+
+        index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard2 = GameObject.Find(i.ToString());
+
+        index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard3 = GameObject.Find(i.ToString());
+
+        index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard4 = GameObject.Find(i.ToString());
+
+        index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard5 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard6 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard7 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard8 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard9 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard10 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard11 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard12 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard13 = GameObject.Find(i.ToString());
+      
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard14 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard15 = GameObject.Find(i.ToString());
+        
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard16 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard17 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard18 = GameObject.Find(i.ToString());
+       
+
+         index = Random.Range(0, CardShuffle.Count - 1);
+         i = CardShuffle[index];
+        CardShuffle.RemoveAt(index);
+        DCard19 = GameObject.Find(i.ToString());
+      
+
+
+
+        PlayerDamaged.Stop();
+        OpponentDamaged.Stop();
+        TalkCheck = 2;
         YoureOn.Play();
         MaybeImWrong.Play();
         YoureWrong.Play();
@@ -219,21 +333,21 @@ public class DeckDebate1a : MonoBehaviour
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
         Card1 = DCard1;
-        Button1 = DButton1;
         Card2 = DCard2;
-        Button2 = DButton2;
         Card3 = DCard3;
-        Button3 = DButton3;
         Card4 = DCard4;
-        Button4 = DButton4;
         Card5 = DCard5;
-        Button5 = DButton5;
         CardPosition = 5;
-        Button1.onClick.AddListener(Button1Clicked);
-        Button2.onClick.AddListener(Button2Clicked);
-        Button3.onClick.AddListener(Button3Clicked);
-        Button4.onClick.AddListener(Button4Clicked);
-        Button5.onClick.AddListener(Button5Clicked);
+        CardButton1 = (Card1.transform.GetChild(0).gameObject).GetComponent<Button>();
+        CardButton2 = (Card2.transform.GetChild(0).gameObject).GetComponent<Button>();
+        CardButton3 = (Card3.transform.GetChild(0).gameObject).GetComponent<Button>();
+        CardButton4 = (Card4.transform.GetChild(0).gameObject).GetComponent<Button>();
+        CardButton5 = (Card5.transform.GetChild(0).gameObject).GetComponent<Button>();
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
         transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
         transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
@@ -241,10 +355,20 @@ public class DeckDebate1a : MonoBehaviour
         transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
+// Update is called once per frame
+void Update()
+{
+   
+
+
+        if (Input.GetMouseButtonDown(0) & TalkCheck == 1)
+        {
+            StartCoroutine(OpponentReply());
+        }
+        if (Input.GetMouseButtonDown(0) & TalkCheck == 0)
+        {
+            StartCoroutine(Final());
+        }
 
         if (PlayerAudienceApproval < 0)
         {
@@ -669,13 +793,13 @@ public class DeckDebate1a : MonoBehaviour
             Scoreboard.GetComponent<Renderer>().material = Material100;
             StartCoroutine(YouWin());
         }
-        if (PlayerAudienceApproval > 75)
+        if (PlayerAudienceApproval > 60)
             {
             YoureWrong.mute = false;
             YoureOn.mute = true;
             MaybeImWrong.mute = true;
         }
-        else if (PlayerAudienceApproval < 25)
+        else if (PlayerAudienceApproval < 40)
         {
             YoureWrong.mute = true;
             YoureOn.mute = true;
@@ -717,172 +841,178 @@ public class DeckDebate1a : MonoBehaviour
 
     void Button1Clicked()
     {
-        Button1.onClick.RemoveListener(Button1Clicked);
-        Button2.onClick.RemoveListener(Button2Clicked);
-        Button3.onClick.RemoveListener(Button3Clicked);
-        Button4.onClick.RemoveListener(Button4Clicked);
-        Button5.onClick.RemoveListener(Button5Clicked);
+        MaleVoice2.Play();
+        CardButton1.onClick.RemoveListener(Button1Clicked);
+        CardButton2.onClick.RemoveListener(Button2Clicked);
+        CardButton3.onClick.RemoveListener(Button3Clicked);
+        CardButton4.onClick.RemoveListener(Button4Clicked);
+        CardButton5.onClick.RemoveListener(Button5Clicked);
         Card1.transform.position = new Vector3(100, 100, 100);
         Deck1.gameObject.SetActive(false);
         SpeechBubble.gameObject.SetActive(true);
         ThoughtBubble.gameObject.SetActive(false);
-            StartCoroutine(OneAA());
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(true);
+        QM5.SetActive(true);
+        QM6.SetActive(true);
+        StartCoroutine(OneAA());
     }
     IEnumerator OneAA()
     {
-        
-                yield return new WaitForSeconds(0.1f);
-                Description = Card1.transform.GetChild(0).GetChild(1).gameObject;
-                EmotionPro = Card1.transform.GetChild(0).GetChild(5).gameObject;
-                EmotionCon = Card1.transform.GetChild(0).GetChild(6).gameObject;
-                AudienceResponse = Card1.transform.GetChild(0).GetChild(3).gameObject;
-                AudienceResponsePro = Card1.transform.GetChild(0).GetChild(2).gameObject;
-                AudienceResponseCon = Card1.transform.GetChild(0).GetChild(4).gameObject;
-                yield return new WaitForSeconds(0.1f);
-                PlayerSpeech.text = Description.GetComponent<Text>().text;
-                yield return new WaitForSeconds(0.1f);
-                if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
-                {
-                    PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
-                }
-                else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
-                {
-                    PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
-                }
-                else
-                {
-                    PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponse.GetComponent<Text>().text);
-                }
-                yield return new WaitForSeconds(0.1f);
-                CardPosition = CardPosition + 1;
-                yield return new WaitForSeconds(0.1f);
-                if (CardPosition == 1)
-                {
-                    Card1 = DCard1;
-                    Button1 = DButton1;
-                }
-                else if (CardPosition == 2)
-                {
-                    Card1 = DCard2;
-                    Button1 = DButton2;
-                }
-                else if (CardPosition == 3)
-                {
-                    Card1 = DCard3;
-                    Button1 = DButton3;
-                }
-                else if (CardPosition == 4)
-                {
-                    Card1 = DCard4;
-                    Button1 = DButton4;
-                }
-                else if (CardPosition == 5)
-                {
-                    Card1 = DCard5;
-                    Button1 = DButton5;
-                }
-                else if (CardPosition == 6)
-                {
-                    Card1 = DCard6;
-                    Button1 = DButton6;
-                }
-                else if (CardPosition == 7)
-                {
-                    Card1 = DCard7;
-                    Button1 = DButton7;
-                }
-                else if (CardPosition == 8)
-                {
-                    Card1 = DCard8;
-                    Button1 = DButton8;
-                }
-                else if (CardPosition == 9)
-                {
-                    Card1 = DCard9;
-                    Button1 = DButton9;
-                }
-                else if (CardPosition == 10)
-                {
-                    Card1 = DCard10;
-                    Button1 = DButton10;
-                }
-                else if (CardPosition == 11)
-                {
-                    Card1 = DCard11;
-                    Button1 = DButton11;
-                }
-                else if (CardPosition == 12)
-                {
-                    Card1 = DCard12;
-                    Button1 = DButton12;
-                }
-                else if (CardPosition == 13)
-                {
-                    Card1 = DCard13;
-                    Button1 = DButton13;
-                }
-                else if (CardPosition == 14)
-                {
-                    Card1 = DCard14;
-                    Button1 = DButton14;
-                }
-                else if (CardPosition == 15)
-                {
-                    Card1 = DCard15;
-                    Button1 = DButton15;
-                }
-                else if (CardPosition == 16)
-                {
-                    Card1 = DCard16;
-                    Button1 = DButton16;
-                }
-                else if (CardPosition == 17)
-                {
-                    Card1 = DCard17;
-                    Button1 = DButton17;
-                }
-                else if (CardPosition == 18)
-                {
-                    Card1 = DCard18;
-                    Button1 = DButton18;
-                }
-                else if (CardPosition == 19)
-                {
-                    Card1 = DCard19;
-                    Button1 = DButton19;
-                }
-                yield return new WaitForSeconds(1);
-                transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
-                transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
-                transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
-                transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
-                transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-                Button1.onClick.AddListener(Button1Clicked);
-                Button2.onClick.AddListener(Button2Clicked);
-                Button3.onClick.AddListener(Button3Clicked);
-                Button4.onClick.AddListener(Button4Clicked);
-                Button5.onClick.AddListener(Button5Clicked);
-            
-        
-        StartCoroutine(OpponentReply());   
+
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
+        Description = Card1.transform.GetChild(0).GetChild(1).gameObject;
+        EmotionPro = Card1.transform.GetChild(0).GetChild(5).gameObject;
+        EmotionCon = Card1.transform.GetChild(0).GetChild(6).gameObject;
+        AudienceResponse = Card1.transform.GetChild(0).GetChild(3).gameObject;
+        AudienceResponsePro = Card1.transform.GetChild(0).GetChild(2).gameObject;
+        AudienceResponseCon = Card1.transform.GetChild(0).GetChild(4).gameObject;
+        yield return new WaitForSeconds(0.1f);
+        PlayerSpeech.text = Description.GetComponent<Text>().text;
+        yield return new WaitForSeconds(0.1f);
+        if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+        }
+        else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+        }
+        else
+        {
+            PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponse.GetComponent<Text>().text);
+        }
+        yield return new WaitForSeconds(0.1f);
+        CardPosition = CardPosition + 1;
+        yield return new WaitForSeconds(0.1f);
+        if (CardPosition == 1)
+        {
+            Card1 = DCard1;      
+        }
+        else if (CardPosition == 2)
+        {
+            Card1 = DCard2;     
+        }
+        else if (CardPosition == 3)
+        {
+            Card1 = DCard3;     
+        }
+        else if (CardPosition == 4)
+        {
+            Card1 = DCard4;      
+        }
+        else if (CardPosition == 5)
+        {
+            Card1 = DCard5;   
+        }
+        else if (CardPosition == 6)
+        {
+            Card1 = DCard6;  
+        }
+        else if (CardPosition == 7)
+        {
+            Card1 = DCard7;    
+        }
+        else if (CardPosition == 8)
+        {
+            Card1 = DCard8;   
+        }
+        else if (CardPosition == 9)
+        {
+            Card1 = DCard9;    
+        }
+        else if (CardPosition == 10)
+        {
+            Card1 = DCard10;     
+        }
+        else if (CardPosition == 11)
+        {
+            Card1 = DCard11;     
+        }
+        else if (CardPosition == 12)
+        {
+            Card1 = DCard12;      
+        }
+        else if (CardPosition == 13)
+        {
+            Card1 = DCard13;       
+        }
+        else if (CardPosition == 14)
+        {
+            Card1 = DCard14;       
+        }
+        else if (CardPosition == 15)
+        {
+            Card1 = DCard15;      
+        }
+        else if (CardPosition == 16)
+        {
+            Card1 = DCard16;      
+        }
+        else if (CardPosition == 17)
+        {
+            Card1 = DCard17;       
+        }
+        else if (CardPosition == 18)
+        {
+            Card1 = DCard18;
+        }
+        else if (CardPosition == 19)
+        {
+            Card1 = DCard19;        
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        CardButton1 = (Card1.transform.GetChild(0).gameObject).GetComponent<Button>();
+        transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
+        transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
+        transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
+        transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
+        transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
+        TalkCheck = 1;
+
     }
 
     void Button2Clicked()
     {
-        Button1.onClick.RemoveListener(Button1Clicked);
-        Button2.onClick.RemoveListener(Button2Clicked);
-        Button3.onClick.RemoveListener(Button3Clicked);
-        Button4.onClick.RemoveListener(Button4Clicked);
-        Button5.onClick.RemoveListener(Button5Clicked);
+        MaleVoice2.Play();
+        CardButton1.onClick.RemoveListener(Button1Clicked);
+        CardButton2.onClick.RemoveListener(Button2Clicked);
+        CardButton3.onClick.RemoveListener(Button3Clicked);
+        CardButton4.onClick.RemoveListener(Button4Clicked);
+        CardButton5.onClick.RemoveListener(Button5Clicked);
         Card2.transform.position = new Vector3(100, 100, 100);
         Deck1.gameObject.SetActive(false);
         SpeechBubble.gameObject.SetActive(true);
         ThoughtBubble.gameObject.SetActive(false);
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(true);
+        QM5.SetActive(true);
+        QM6.SetActive(true);
         StartCoroutine(TwoAA());
     }
     IEnumerator TwoAA()
     {
         yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         Description = Card2.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card2.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card2.transform.GetChild(0).GetChild(6).gameObject;
@@ -910,128 +1040,122 @@ public class DeckDebate1a : MonoBehaviour
         if (CardPosition == 1)
         {
             Card2 = DCard1;
-            Button2 = DButton1;
         }
         else if (CardPosition == 2)
         {
             Card2 = DCard2;
-            Button2 = DButton2;
         }
         else if (CardPosition == 3)
         {
             Card2 = DCard3;
-            Button2 = DButton3;
         }
         else if (CardPosition == 4)
         {
             Card2 = DCard4;
-            Button2 = DButton4;
         }
         else if (CardPosition == 5)
         {
             Card2 = DCard5;
-            Button2 = DButton5;
         }
         else if (CardPosition == 6)
         {
             Card2 = DCard6;
-            Button2 = DButton6;
         }
         else if (CardPosition == 7)
         {
             Card2 = DCard7;
-            Button2 = DButton7;
         }
         else if (CardPosition == 8)
         {
             Card2 = DCard8;
-            Button2 = DButton8;
         }
         else if (CardPosition == 9)
         {
             Card2 = DCard9;
-            Button2 = DButton9;
         }
         else if (CardPosition == 10)
         {
             Card2 = DCard10;
-            Button2 = DButton10;
         }
         else if (CardPosition == 11)
         {
             Card2 = DCard11;
-            Button2 = DButton11;
         }
         else if (CardPosition == 12)
         {
             Card2 = DCard12;
-            Button2 = DButton12;
         }
         else if (CardPosition == 13)
         {
             Card2 = DCard13;
-            Button2 = DButton13;
         }
         else if (CardPosition == 14)
         {
             Card2 = DCard14;
-            Button2 = DButton14;
         }
         else if (CardPosition == 15)
         {
             Card2 = DCard15;
-            Button2 = DButton15;
         }
         else if (CardPosition == 16)
         {
             Card2 = DCard16;
-            Button2 = DButton16;
         }
         else if (CardPosition == 17)
         {
             Card2 = DCard17;
-            Button2 = DButton17;
         }
         else if (CardPosition == 18)
         {
             Card2 = DCard18;
-            Button2 = DButton18;
         }
         else if (CardPosition == 19)
         {
             Card2 = DCard19;
-            Button2 = DButton19;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        CardButton2 = (Card2.transform.GetChild(0).gameObject).GetComponent<Button>();
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
         transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
         transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
         transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
         transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-        Button1.onClick.AddListener(Button1Clicked);
-        Button2.onClick.AddListener(Button2Clicked);
-        Button3.onClick.AddListener(Button3Clicked);
-        Button4.onClick.AddListener(Button4Clicked);
-        Button5.onClick.AddListener(Button5Clicked);
-        StartCoroutine(OpponentReply());
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
+        TalkCheck = 1;
     }
 
     void Button3Clicked()
     {
-        Button1.onClick.RemoveListener(Button1Clicked);
-        Button2.onClick.RemoveListener(Button2Clicked);
-        Button3.onClick.RemoveListener(Button3Clicked);
-        Button4.onClick.RemoveListener(Button4Clicked);
-        Button5.onClick.RemoveListener(Button5Clicked);
+        MaleVoice2.Play();
+        CardButton1.onClick.RemoveListener(Button1Clicked);
+        CardButton2.onClick.RemoveListener(Button2Clicked);
+        CardButton3.onClick.RemoveListener(Button3Clicked);
+        CardButton4.onClick.RemoveListener(Button4Clicked);
+        CardButton5.onClick.RemoveListener(Button5Clicked);
         Card3.transform.position = new Vector3(100, 100, 100);
         Deck1.gameObject.SetActive(false);
         SpeechBubble.gameObject.SetActive(true);
         ThoughtBubble.gameObject.SetActive(false);
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(true);
+        QM5.SetActive(true);
+        QM6.SetActive(true);
         StartCoroutine(ThreeAA());
     }
     IEnumerator ThreeAA()
     {
         yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         Description = Card3.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card3.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card3.transform.GetChild(0).GetChild(6).gameObject;
@@ -1059,128 +1183,122 @@ public class DeckDebate1a : MonoBehaviour
         if (CardPosition == 1)
         {
             Card3 = DCard1;
-            Button3 = DButton1;
         }
         else if (CardPosition == 2)
         {
             Card3 = DCard2;
-            Button3 = DButton2;
         }
         else if (CardPosition == 3)
         {
             Card3 = DCard3;
-            Button3 = DButton3;
         }
         else if (CardPosition == 4)
         {
             Card3 = DCard4;
-            Button3 = DButton4;
         }
         else if (CardPosition == 5)
         {
             Card3 = DCard5;
-            Button3 = DButton5;
         }
         else if (CardPosition == 6)
         {
             Card3 = DCard6;
-            Button3 = DButton6;
         }
         else if (CardPosition == 7)
         {
             Card3 = DCard7;
-            Button3 = DButton7;
         }
         else if (CardPosition == 8)
         {
             Card3 = DCard8;
-            Button3 = DButton8;
         }
         else if (CardPosition == 9)
         {
             Card3 = DCard9;
-            Button3 = DButton9;
         }
         else if (CardPosition == 10)
         {
             Card3 = DCard10;
-            Button3 = DButton10;
         }
         else if (CardPosition == 11)
         {
             Card3 = DCard11;
-            Button3 = DButton11;
         }
         else if (CardPosition == 12)
         {
             Card3 = DCard12;
-            Button3 = DButton12;
         }
         else if (CardPosition == 13)
         {
             Card3 = DCard13;
-            Button3 = DButton13;
         }
         else if (CardPosition == 14)
         {
             Card3 = DCard14;
-            Button3 = DButton14;
         }
         else if (CardPosition == 15)
         {
             Card3 = DCard15;
-            Button3 = DButton15;
         }
         else if (CardPosition == 16)
         {
             Card3 = DCard16;
-            Button3 = DButton16;
         }
         else if (CardPosition == 17)
         {
             Card3 = DCard17;
-            Button3 = DButton17;
         }
         else if (CardPosition == 18)
         {
             Card3 = DCard18;
-            Button3 = DButton18;
         }
         else if (CardPosition == 19)
         {
             Card3 = DCard19;
-            Button3 = DButton19;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        CardButton3 = (Card3.transform.GetChild(0).gameObject).GetComponent<Button>();
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
         transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
         transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
         transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
         transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-        Button1.onClick.AddListener(Button1Clicked);
-        Button2.onClick.AddListener(Button2Clicked);
-        Button3.onClick.AddListener(Button3Clicked);
-        Button4.onClick.AddListener(Button4Clicked);
-        Button5.onClick.AddListener(Button5Clicked);
-        StartCoroutine(OpponentReply());
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
+        TalkCheck = 1;
     }
 
     void Button4Clicked()
     {
-        Button1.onClick.RemoveListener(Button1Clicked);
-        Button2.onClick.RemoveListener(Button2Clicked);
-        Button3.onClick.RemoveListener(Button3Clicked);
-        Button4.onClick.RemoveListener(Button4Clicked);
-        Button5.onClick.RemoveListener(Button5Clicked);
+        MaleVoice2.Play();
+        CardButton1.onClick.RemoveListener(Button1Clicked);
+        CardButton2.onClick.RemoveListener(Button2Clicked);
+        CardButton3.onClick.RemoveListener(Button3Clicked);
+        CardButton4.onClick.RemoveListener(Button4Clicked);
+        CardButton5.onClick.RemoveListener(Button5Clicked);
         Card4.transform.position = new Vector3(100, 100, 100);
         Deck1.gameObject.SetActive(false);
         SpeechBubble.gameObject.SetActive(true);
         ThoughtBubble.gameObject.SetActive(false);
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(true);
+        QM5.SetActive(true);
+        QM6.SetActive(true);
         StartCoroutine(FourAA());
     }
     IEnumerator FourAA()
     {
         yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         Description = Card4.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card4.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card4.transform.GetChild(0).GetChild(6).gameObject;
@@ -1208,128 +1326,122 @@ public class DeckDebate1a : MonoBehaviour
         if (CardPosition == 1)
         {
             Card4 = DCard1;
-            Button4 = DButton1;
         }
         else if (CardPosition == 2)
         {
             Card4 = DCard2;
-            Button4 = DButton2;
         }
         else if (CardPosition == 3)
         {
             Card4 = DCard3;
-            Button4 = DButton3;
         }
         else if (CardPosition == 4)
         {
             Card4 = DCard4;
-            Button4 = DButton4;
         }
         else if (CardPosition == 5)
         {
             Card4 = DCard5;
-            Button4 = DButton5;
         }
         else if (CardPosition == 6)
         {
             Card4 = DCard6;
-            Button4 = DButton6;
         }
         else if (CardPosition == 7)
         {
             Card4 = DCard7;
-            Button4 = DButton7;
         }
         else if (CardPosition == 8)
         {
             Card4 = DCard8;
-            Button4 = DButton8;
         }
         else if (CardPosition == 9)
         {
             Card4 = DCard9;
-            Button4 = DButton9;
         }
         else if (CardPosition == 10)
         {
             Card4 = DCard10;
-            Button4 = DButton10;
         }
         else if (CardPosition == 11)
         {
             Card4 = DCard11;
-            Button4 = DButton11;
         }
         else if (CardPosition == 12)
         {
             Card4 = DCard12;
-            Button4 = DButton12;
         }
         else if (CardPosition == 13)
         {
             Card4 = DCard13;
-            Button4 = DButton13;
         }
         else if (CardPosition == 14)
         {
             Card4 = DCard14;
-            Button4 = DButton14;
         }
         else if (CardPosition == 15)
         {
             Card4 = DCard15;
-            Button4 = DButton15;
         }
         else if (CardPosition == 16)
         {
             Card4 = DCard16;
-            Button4 = DButton16;
         }
         else if (CardPosition == 17)
         {
             Card4 = DCard17;
-            Button4 = DButton17;
         }
         else if (CardPosition == 18)
         {
             Card4 = DCard18;
-            Button4 = DButton18;
         }
         else if (CardPosition == 19)
         {
             Card4 = DCard19;
-            Button4 = DButton19;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        CardButton4 = (Card4.transform.GetChild(0).gameObject).GetComponent<Button>();
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
         transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
         transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
         transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
         transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-        Button1.onClick.AddListener(Button1Clicked);
-        Button2.onClick.AddListener(Button2Clicked);
-        Button3.onClick.AddListener(Button3Clicked);
-        Button4.onClick.AddListener(Button4Clicked);
-        Button5.onClick.AddListener(Button5Clicked);
-        StartCoroutine(OpponentReply());
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
+        TalkCheck = 1;
     }
 
     void Button5Clicked()
     {
-        Button1.onClick.RemoveListener(Button1Clicked);
-        Button2.onClick.RemoveListener(Button2Clicked);
-        Button3.onClick.RemoveListener(Button3Clicked);
-        Button4.onClick.RemoveListener(Button4Clicked);
-        Button5.onClick.RemoveListener(Button5Clicked);
+        MaleVoice2.Play();
+        CardButton1.onClick.RemoveListener(Button1Clicked);
+        CardButton2.onClick.RemoveListener(Button2Clicked);
+        CardButton3.onClick.RemoveListener(Button3Clicked);
+        CardButton4.onClick.RemoveListener(Button4Clicked);
+        CardButton5.onClick.RemoveListener(Button5Clicked);
         Card5.transform.position = new Vector3(100, 100, 100);
         Deck1.gameObject.SetActive(false);
         SpeechBubble.gameObject.SetActive(true);
         ThoughtBubble.gameObject.SetActive(false);
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(true);
+        QM5.SetActive(true);
+        QM6.SetActive(true);
         StartCoroutine(FiveAA());
     }
     IEnumerator FiveAA()
     {
         yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         Description = Card5.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card5.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card5.transform.GetChild(0).GetChild(6).gameObject;
@@ -1357,110 +1469,92 @@ public class DeckDebate1a : MonoBehaviour
         if (CardPosition == 1)
         {
             Card5 = DCard1;
-            Button5 = DButton1;
         }
         else if (CardPosition == 2)
         {
             Card5 = DCard2;
-            Button5 = DButton2;
         }
         else if (CardPosition == 3)
         {
             Card5 = DCard3;
-            Button5 = DButton3;
         }
         else if (CardPosition == 4)
         {
             Card5 = DCard4;
-            Button5 = DButton4;
         }
         else if (CardPosition == 5)
         {
             Card5 = DCard5;
-            Button5 = DButton5;
         }
         else if (CardPosition == 6)
         {
             Card5 = DCard6;
-            Button5 = DButton6;
         }
         else if (CardPosition == 7)
         {
             Card5 = DCard7;
-            Button5 = DButton7;
         }
         else if (CardPosition == 8)
         {
             Card5 = DCard8;
-            Button5 = DButton8;
         }
         else if (CardPosition == 9)
         {
             Card5 = DCard9;
-            Button5 = DButton9;
         }
         else if (CardPosition == 10)
         {
             Card5 = DCard10;
-            Button5 = DButton10;
         }
         else if (CardPosition == 11)
         {
             Card5 = DCard11;
-            Button5 = DButton11;
         }
         else if (CardPosition == 12)
         {
             Card5 = DCard12;
-            Button5 = DButton12;
         }
         else if (CardPosition == 13)
         {
             Card5 = DCard13;
-            Button5 = DButton13;
         }
         else if (CardPosition == 14)
         {
             Card5 = DCard14;
-            Button5 = DButton14;
         }
         else if (CardPosition == 15)
         {
             Card5 = DCard15;
-            Button5 = DButton15;
         }
         else if (CardPosition == 16)
         {
             Card5 = DCard16;
-            Button5 = DButton16;
         }
         else if (CardPosition == 17)
         {
             Card5 = DCard17;
-            Button5 = DButton17;
         }
         else if (CardPosition == 18)
         {
             Card5 = DCard18;
-            Button5 = DButton18;
         }
         else if (CardPosition == 19)
         {
             Card5 = DCard19;
-            Button5 = DButton19;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        CardButton5 = (Card5.transform.GetChild(0).gameObject).GetComponent<Button>();
         transform.position = Card1.transform.position = new Vector3(-0.5f, -0.38f, 1);
         transform.position = Card2.transform.position = new Vector3(-0.25f, -0.38f, 1);
         transform.position = Card3.transform.position = new Vector3(-0f, -0.38f, 1);
         transform.position = Card4.transform.position = new Vector3(0.25f, -0.38f, 1);
         transform.position = Card5.transform.position = new Vector3(0.5f, -0.38f, 1);
-        Button1.onClick.AddListener(Button1Clicked);
-        Button2.onClick.AddListener(Button2Clicked);
-        Button3.onClick.AddListener(Button3Clicked);
-        Button4.onClick.AddListener(Button4Clicked);
-        Button5.onClick.AddListener(Button5Clicked);
-        StartCoroutine(OpponentReply());
+        CardButton1.onClick.AddListener(Button1Clicked);
+        CardButton2.onClick.AddListener(Button2Clicked);
+        CardButton3.onClick.AddListener(Button3Clicked);
+        CardButton4.onClick.AddListener(Button4Clicked);
+        CardButton5.onClick.AddListener(Button5Clicked);
+        TalkCheck = 1;
     }
 
 
@@ -1469,6 +1563,15 @@ public class DeckDebate1a : MonoBehaviour
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
         // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
+        MaleVoice2.Pause();
+        QM1.SetActive(false);
+        QM2.SetActive(false);
+        QM3.SetActive(false);
+        QM4.SetActive(false);
+        QM5.SetActive(false);
+        QM6.SetActive(false);
+        PlayerSpotlight.SetActive(false);
+        OpponentSpotlight.SetActive(true);
         MaleVoice1.Play();
         SpeechBubble.gameObject.SetActive(false);
         OpponentSpeechBubble.gameObject.SetActive(true);
@@ -1477,80 +1580,94 @@ public class DeckDebate1a : MonoBehaviour
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 2;
             OpponentSpeech.text = "Marijuana is bad for your brain, lungs, and heart.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 1;
         }
         if (WhichOpponentReply == 2)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 2;
             OpponentSpeech.text = "Weed smokers have a higher risk of developing a mental illness like depression or schizophrenia.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 1;
         }
         if (WhichOpponentReply == 3)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "It's addictive. If it is legal numerous people will suffer financially because they spend all their money on pot. Up to 1 in 10 weed smokers develop a dependency to it over time.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 3;
         }
         if (WhichOpponentReply == 4)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 2;
             OpponentSpeech.text = "It's a gateway drug. Research in New Zealand found regular cannabis users were 60 times more likely to try other illicit drugs than young people who had never smoked cannabis.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 4;
         }
         if (WhichOpponentReply == 5)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 3;
             OpponentSpeech.text = "Research shows that heavy pot-smokers are several times more likely than non-users to commit violent crime.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 1;
         }
         if (WhichOpponentReply == 6)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "Druggies will see it as a chance to try and get worst drugs legalised.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 4;
         }
         if (WhichOpponentReply == 7)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "A study published by Northwestern University in the journal Hippocampus showed, through MRIs, an oddly shaped hippocampus in adolescents who'd used marijuana heavily at ages 16 or 17 for a period of three years. The hippocampus is the region of the brain most responsible for short- and long-term memory. Not surprisingly, there was also an accompanied average long-term memory test score reduction of 18% for heavy users compared with those who'd not used marijuana before. ";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 5;
         }
         if (WhichOpponentReply == 8)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "There aren't adequate parameters to police marijuana use. The government is so slow how long would it take to put these in place?";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 2;
         }
         if (WhichOpponentReply == 9)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "A lot of land would have to be used to grow weed which could be used to grow more important things.";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 5;
         }
         if (WhichOpponentReply == 10)
         {
             PlayerAudienceApproval = PlayerAudienceApproval - 1;
             OpponentSpeech.text = "Imagine all the wasted electricity being used to weed. A 2012 study from scientist Evan Mills, Ph.D., at the Lawrence Berkeley National Laboratory found that legal indoor marijuana growing farms were accounting for 1% of our nation's electricity usage, totaling about $6 billion a year. ";
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.001f);
             AudienceMood = 5;
         }
+        PlayerDamaged.Play();
+        yield return new WaitForSeconds(0.1f);
+        PlayerDamaged.Stop();
+        TalkCheck = 0;
+    }
 
-        yield return new WaitForSeconds(1);
+    IEnumerator Final()
+    {
+        yield return new WaitForSeconds(0.001f);
+        PlayerSpeech.text = "";
+        OpponentSpeech.text = "";
         MaleVoice1.Pause();
+        QM1.SetActive(true);
+        QM2.SetActive(true);
+        QM3.SetActive(true);
+        PlayerSpotlight.SetActive(true);
+        OpponentSpotlight.SetActive(false);
         ThoughtBubble.gameObject.SetActive(true);
         OpponentSpeechBubble.gameObject.SetActive(false);
         Deck1.gameObject.SetActive(true);
+        TalkCheck = 2;
     }
-
     
     IEnumerator YouWin()
     {
