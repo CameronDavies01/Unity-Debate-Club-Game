@@ -47,6 +47,7 @@ public class DeckDebate1a : MonoBehaviour
      GameObject DCard19;
 
 
+
     // The Cards
     GameObject Card1;
     GameObject Card2;
@@ -155,7 +156,6 @@ public class DeckDebate1a : MonoBehaviour
     public Material Material98;
     public Material Material99;
     public Material Material100;
-
     public AudioSource YoureWrong;
     public AudioSource YoureOn;
     public AudioSource MaybeImWrong;
@@ -167,6 +167,9 @@ public class DeckDebate1a : MonoBehaviour
     Button CardButton3;
     Button CardButton4;
     Button CardButton5;
+
+    public GameObject DummyCard;
+    public GameObject OpponentDummyCard;
 
     // This details your current audience approval
     public int PlayerAudienceApproval;
@@ -197,12 +200,10 @@ public class DeckDebate1a : MonoBehaviour
 
     public int TalkCheck;
 
-
     // Start is called before the first frame update
     void Start()
     {
         List<int> CardShuffle = new List<int>(); 
-
         for (int c = 0; c < 19; c++)
         {
             CardShuffle.Add(c);
@@ -213,114 +214,79 @@ public class DeckDebate1a : MonoBehaviour
         i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard1 = GameObject.Find(i.ToString());
-
         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard2 = GameObject.Find(i.ToString());
-
         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard3 = GameObject.Find(i.ToString());
-
         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard4 = GameObject.Find(i.ToString());
-
         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard5 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard6 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard7 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard8 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard9 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard10 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard11 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard12 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard13 = GameObject.Find(i.ToString());
-      
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard14 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard15 = GameObject.Find(i.ToString());
-        
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard16 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
-        DCard17 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        DCard17 = GameObject.Find(i.ToString());  
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard18 = GameObject.Find(i.ToString());
-       
-
-         index = Random.Range(0, CardShuffle.Count - 1);
-         i = CardShuffle[index];
+        index = Random.Range(0, CardShuffle.Count - 1);
+        i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard19 = GameObject.Find(i.ToString());
       
-
-
-
         PlayerDamaged.Stop();
         OpponentDamaged.Stop();
         TalkCheck = 2;
@@ -358,9 +324,6 @@ public class DeckDebate1a : MonoBehaviour
 // Update is called once per frame
 void Update()
 {
-   
-
-
         if (Input.GetMouseButtonDown(0) & TalkCheck == 1)
         {
             StartCoroutine(OpponentReply());
@@ -837,6 +800,7 @@ void Update()
         {
             CardPosition = 1;
         }
+
     }
 
     void Button1Clicked()
@@ -863,19 +827,21 @@ void Update()
     }
     IEnumerator OneAA()
     {
-
         yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Play();
-        yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Stop();
         Description = Card1.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card1.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card1.transform.GetChild(0).GetChild(6).gameObject;
         AudienceResponse = Card1.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card1.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card1.transform.GetChild(0).GetChild(4).gameObject;
-        yield return new WaitForSeconds(0.1f);
         PlayerSpeech.text = Description.GetComponent<Text>().text;
+        DummyCard.active = true;
+        DummyCard.GetComponent<Animation>().Play("CardThrow");
+        yield return new WaitForSeconds(0.8f);
+        OpponentDamaged.Play();
+        DummyCard.active = false;
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();     
         yield return new WaitForSeconds(0.1f);
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
@@ -1010,17 +976,20 @@ void Update()
     IEnumerator TwoAA()
     {
         yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Play();
-        yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Stop();
         Description = Card2.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card2.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card2.transform.GetChild(0).GetChild(6).gameObject;
         AudienceResponse = Card2.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card2.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card2.transform.GetChild(0).GetChild(4).gameObject;
-        yield return new WaitForSeconds(0.1f);
         PlayerSpeech.text = Description.GetComponent<Text>().text;
+        DummyCard.active = true;
+        DummyCard.GetComponent<Animation>().Play("CardThrow");
+        yield return new WaitForSeconds(0.8f);
+        OpponentDamaged.Play();
+        DummyCard.active = false;
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         yield return new WaitForSeconds(0.1f);
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
@@ -1153,17 +1122,20 @@ void Update()
     IEnumerator ThreeAA()
     {
         yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Play();
-        yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Stop();
         Description = Card3.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card3.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card3.transform.GetChild(0).GetChild(6).gameObject;
         AudienceResponse = Card3.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card3.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card3.transform.GetChild(0).GetChild(4).gameObject;
-        yield return new WaitForSeconds(0.1f);
         PlayerSpeech.text = Description.GetComponent<Text>().text;
+        DummyCard.active = true;
+        DummyCard.GetComponent<Animation>().Play("CardThrow");
+        yield return new WaitForSeconds(0.8f);
+        OpponentDamaged.Play();
+        DummyCard.active = false;
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();      
         yield return new WaitForSeconds(0.1f);
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
@@ -1296,17 +1268,20 @@ void Update()
     IEnumerator FourAA()
     {
         yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Play();
-        yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Stop();
         Description = Card4.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card4.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card4.transform.GetChild(0).GetChild(6).gameObject;
         AudienceResponse = Card4.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card4.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card4.transform.GetChild(0).GetChild(4).gameObject;
-        yield return new WaitForSeconds(0.1f);
         PlayerSpeech.text = Description.GetComponent<Text>().text;
+        DummyCard.active = true;
+        DummyCard.GetComponent<Animation>().Play("CardThrow");
+        yield return new WaitForSeconds(0.8f);
+        OpponentDamaged.Play();
+        DummyCard.active = false;
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
         yield return new WaitForSeconds(0.1f);
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
@@ -1439,17 +1414,22 @@ void Update()
     IEnumerator FiveAA()
     {
         yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Play();
-        yield return new WaitForSeconds(0.1f);
-        OpponentDamaged.Stop();
         Description = Card5.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = Card5.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = Card5.transform.GetChild(0).GetChild(6).gameObject;
         AudienceResponse = Card5.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card5.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card5.transform.GetChild(0).GetChild(4).gameObject;
-        yield return new WaitForSeconds(0.1f);
         PlayerSpeech.text = Description.GetComponent<Text>().text;
+        DummyCard.active = true;
+        DummyCard.GetComponent<Animation>().Play("CardThrow");
+        yield return new WaitForSeconds(0.8f);
+        OpponentDamaged.Play();
+        DummyCard.active = false;
+        yield return new WaitForSeconds(0.1f);
+        OpponentDamaged.Stop();
+        
+        
         yield return new WaitForSeconds(0.1f);
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
@@ -1563,6 +1543,11 @@ void Update()
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
         // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
+        TalkCheck = 2;
+        OpponentSpeechBubble.gameObject.SetActive(true);
+        MaleVoice1.Play();
+        OpponentDummyCard.active = true;
+        OpponentDummyCard.GetComponent<Animation>().Play("OpponentCardThrow");
         MaleVoice2.Pause();
         QM1.SetActive(false);
         QM2.SetActive(false);
@@ -1572,9 +1557,7 @@ void Update()
         QM6.SetActive(false);
         PlayerSpotlight.SetActive(false);
         OpponentSpotlight.SetActive(true);
-        MaleVoice1.Play();
         SpeechBubble.gameObject.SetActive(false);
-        OpponentSpeechBubble.gameObject.SetActive(true);
         WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
         if (WhichOpponentReply == 1)
         {
@@ -1646,10 +1629,14 @@ void Update()
             yield return new WaitForSeconds(0.001f);
             AudienceMood = 5;
         }
+        
+        yield return new WaitForSeconds(0.8f);
         PlayerDamaged.Play();
+        OpponentDummyCard.active = false;
         yield return new WaitForSeconds(0.1f);
         PlayerDamaged.Stop();
         TalkCheck = 0;
+
     }
 
     IEnumerator Final()
