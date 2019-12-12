@@ -1561,73 +1561,73 @@ void Update()
         WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
         if (WhichOpponentReply == 1)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 2;
-            OpponentSpeech.text = "Marijuana is bad for your brain, lungs, and heart.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage1").GetComponent<Text>().text); 
+            OpponentSpeech.text = GameObject.Find("Card1").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 1;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange1").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 2)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 2;
-            OpponentSpeech.text = "Weed smokers have a higher risk of developing a mental illness like depression or schizophrenia.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage2").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card2").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 1;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange2").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 3)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "It's addictive. If it is legal numerous people will suffer financially because they spend all their money on pot. Up to 1 in 10 weed smokers develop a dependency to it over time.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage3").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card3").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 3;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange3").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 4)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 2;
-            OpponentSpeech.text = "It's a gateway drug. Research in New Zealand found regular cannabis users were 60 times more likely to try other illicit drugs than young people who had never smoked cannabis.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage4").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card4").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 4;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange4").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 5)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 3;
-            OpponentSpeech.text = "Research shows that heavy pot-smokers are several times more likely than non-users to commit violent crime.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage5").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card5").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 1;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange5").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 6)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "Druggies will see it as a chance to try and get worst drugs legalised.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage6").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card6").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 4;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange6").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 7)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "A study published by Northwestern University in the journal Hippocampus showed, through MRIs, an oddly shaped hippocampus in adolescents who'd used marijuana heavily at ages 16 or 17 for a period of three years. The hippocampus is the region of the brain most responsible for short- and long-term memory. Not surprisingly, there was also an accompanied average long-term memory test score reduction of 18% for heavy users compared with those who'd not used marijuana before. ";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage7").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card7").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 5;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange7").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 8)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "There aren't adequate parameters to police marijuana use. The government is so slow how long would it take to put these in place?";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage8").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card8").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 2;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange8").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 9)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "A lot of land would have to be used to grow weed which could be used to grow more important things.";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage9").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card9").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 5;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange9").GetComponent<Text>().text);
         }
         if (WhichOpponentReply == 10)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - 1;
-            OpponentSpeech.text = "Imagine all the wasted electricity being used to weed. A 2012 study from scientist Evan Mills, Ph.D., at the Lawrence Berkeley National Laboratory found that legal indoor marijuana growing farms were accounting for 1% of our nation's electricity usage, totaling about $6 billion a year. ";
+            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage10").GetComponent<Text>().text); ;
+            OpponentSpeech.text = GameObject.Find("Card10").GetComponent<Text>().text;
             yield return new WaitForSeconds(0.001f);
-            AudienceMood = 5;
+            AudienceMood = int.Parse(GameObject.Find("AudienceChange10").GetComponent<Text>().text);
         }
         
         yield return new WaitForSeconds(0.8f);

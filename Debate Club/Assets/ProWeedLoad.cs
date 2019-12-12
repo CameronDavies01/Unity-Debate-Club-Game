@@ -7,14 +7,20 @@ using UnityEngine.SceneManagement;
 public class ProWeedLoad : MonoBehaviour
 {
     public Button ProWeedPressed;
+    public Button AntiGunPressed;
     // Start is called before the first frame update
     void Start()
     {
         ProWeedPressed.onClick.AddListener(ProWeedIsPressed);
+        AntiGunPressed.onClick.AddListener(AntiGunIsPressed);
     }
 
    void ProWeedIsPressed()
     {
-        Application.LoadLevel(0);
+       SceneManager.LoadScene(1);
+    }
+    void AntiGunIsPressed()
+    {
+        SceneManager.LoadScene(0);
     }
 }
