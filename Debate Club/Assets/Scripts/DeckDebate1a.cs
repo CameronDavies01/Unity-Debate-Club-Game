@@ -12,6 +12,8 @@ public class DeckDebate1a : MonoBehaviour
     GameObject AudienceResponse;
     GameObject AudienceResponsePro;
     GameObject AudienceResponseCon;
+    GameObject AudienceResponseSpeechPro;
+    GameObject AudienceResponseSpeechCon;
 
     public GameObject PlayerSpotlight;
     public GameObject OpponentSpotlight;
@@ -161,6 +163,11 @@ public class DeckDebate1a : MonoBehaviour
     public AudioSource MaybeImWrong;
     public AudioSource MaleVoice1;
     public AudioSource MaleVoice2;
+    public AudioSource Ha;
+    public AudioSource TheStateOfThisWorld;
+    public AudioSource YouDisgustMe;
+    public AudioSource YesYes;
+    public AudioSource WeWillDoThis;
 
     Button CardButton1;
     Button CardButton2;
@@ -170,6 +177,7 @@ public class DeckDebate1a : MonoBehaviour
 
     public GameObject DummyCard;
     public GameObject OpponentDummyCard;
+    public GameObject AudienceSpeechBubble;
 
     // This details your current audience approval
     public int PlayerAudienceApproval;
@@ -199,6 +207,12 @@ public class DeckDebate1a : MonoBehaviour
     public Text EndState;
 
     public int TalkCheck;
+
+    public Text AudienceSpeech;
+
+    float WhereX;
+    float WhereY;
+    float WhereZ;
 
     // Start is called before the first frame update
     void Start()
@@ -293,9 +307,19 @@ public class DeckDebate1a : MonoBehaviour
         YoureOn.Play();
         MaybeImWrong.Play();
         YoureWrong.Play();
+        Ha.Play();
+        TheStateOfThisWorld.Play();
+        YouDisgustMe.Play();
+        YesYes.Play();
+        WeWillDoThis.Play();
         YoureOn.mute = true;
         MaybeImWrong.mute = true;
         YoureWrong.mute = true;
+        Ha.mute = true;
+        TheStateOfThisWorld.mute = true;
+        YouDisgustMe.mute = true;
+        YesYes.mute = true;
+        WeWillDoThis.mute = true;
         AudienceMood = 5;
         PlayerAudienceApproval = 50;
         Card1 = DCard1;
@@ -778,22 +802,47 @@ void Update()
         if (AudienceMood == 1)
         {
             AudienceMaterial.SetColor("_Color", Color.gray);
+            Ha.mute = true;
+            TheStateOfThisWorld.mute = true;
+            YouDisgustMe.mute = true;
+            YesYes.mute = false;
+            WeWillDoThis.mute = true;
         }
         if (AudienceMood == 2)
         {
             AudienceMaterial.SetColor("_Color", Color.green);
+            Ha.mute = false;
+            TheStateOfThisWorld.mute = true;
+            YouDisgustMe.mute = true;
+            YesYes.mute = true;
+            WeWillDoThis.mute = true;
         }
         if (AudienceMood == 3)
         {
             AudienceMaterial.SetColor("_Color", Color.cyan);
+            Ha.mute = true;
+            TheStateOfThisWorld.mute = false;
+            YouDisgustMe.mute = true;
+            YesYes.mute = true;
+            WeWillDoThis.mute = true;
         }
         if (AudienceMood == 4)
         {
             AudienceMaterial.SetColor("_Color", Color.magenta);
+            Ha.mute = true;
+            TheStateOfThisWorld.mute = true;
+            YouDisgustMe.mute = true;
+            YesYes.mute = true;
+            WeWillDoThis.mute = false;
         }
         if (AudienceMood == 5)
         {
             AudienceMaterial.SetColor("_Color", Color.red);
+            Ha.mute = true;
+            TheStateOfThisWorld.mute = true;
+            YouDisgustMe.mute = false;
+            YesYes.mute = true;
+            WeWillDoThis.mute = true;
         }
 
         if (CardPosition > 19)
@@ -834,6 +883,8 @@ void Update()
         AudienceResponse = Card1.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card1.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card1.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = Card1.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = Card1.transform.GetChild(0).GetChild(9).gameObject;
         PlayerSpeech.text = Description.GetComponent<Text>().text;
         DummyCard.active = true;
         DummyCard.GetComponent<Animation>().Play("CardThrow");
@@ -846,10 +897,16 @@ void Update()
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.blue;
         }
         else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.red;
         }
         else
         {
@@ -982,6 +1039,8 @@ void Update()
         AudienceResponse = Card2.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card2.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card2.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = Card2.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = Card2.transform.GetChild(0).GetChild(9).gameObject;
         PlayerSpeech.text = Description.GetComponent<Text>().text;
         DummyCard.active = true;
         DummyCard.GetComponent<Animation>().Play("CardThrow");
@@ -994,10 +1053,16 @@ void Update()
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.blue;
         }
         else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.red;
         }
         else
         {
@@ -1128,6 +1193,8 @@ void Update()
         AudienceResponse = Card3.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card3.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card3.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = Card3.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = Card3.transform.GetChild(0).GetChild(9).gameObject;
         PlayerSpeech.text = Description.GetComponent<Text>().text;
         DummyCard.active = true;
         DummyCard.GetComponent<Animation>().Play("CardThrow");
@@ -1140,10 +1207,16 @@ void Update()
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.blue;
         }
         else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.red;
         }
         else
         {
@@ -1274,6 +1347,8 @@ void Update()
         AudienceResponse = Card4.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card4.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card4.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = Card4.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = Card4.transform.GetChild(0).GetChild(9).gameObject;
         PlayerSpeech.text = Description.GetComponent<Text>().text;
         DummyCard.active = true;
         DummyCard.GetComponent<Animation>().Play("CardThrow");
@@ -1286,10 +1361,16 @@ void Update()
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.blue;
         }
         else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.red;
         }
         else
         {
@@ -1420,6 +1501,8 @@ void Update()
         AudienceResponse = Card5.transform.GetChild(0).GetChild(3).gameObject;
         AudienceResponsePro = Card5.transform.GetChild(0).GetChild(2).gameObject;
         AudienceResponseCon = Card5.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = Card5.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = Card5.transform.GetChild(0).GetChild(9).gameObject;
         PlayerSpeech.text = Description.GetComponent<Text>().text;
         DummyCard.active = true;
         DummyCard.GetComponent<Animation>().Play("CardThrow");
@@ -1434,10 +1517,16 @@ void Update()
         if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.blue;
         }
         else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
         {
             PlayerAudienceApproval = PlayerAudienceApproval + int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+            AudienceSpeechBubble.active = true;
+            AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+            AudienceSpeech.GetComponent<Text>().color = Color.red;
         }
         else
         {
@@ -1543,6 +1632,7 @@ void Update()
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
         // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
+        AudienceSpeechBubble.active = false;
         TalkCheck = 2;
         OpponentSpeechBubble.gameObject.SetActive(true);
         MaleVoice1.Play();
@@ -1654,6 +1744,7 @@ void Update()
         OpponentSpeechBubble.gameObject.SetActive(false);
         Deck1.gameObject.SetActive(true);
         TalkCheck = 2;
+        AudienceSpeechBubble.transform.position = new Vector3((Random.Range(-18, 18)), (Random.Range(0, 10)), 20);
     }
     
     IEnumerator YouWin()
