@@ -47,6 +47,9 @@ public class DeckDebate1a : MonoBehaviour
     public ParticleSystem PlayerDamaged;
     public ParticleSystem OpponentDamaged;
 
+    public int OpponentMove;
+    public GameObject OCard;
+
     GameObject DCard1;
     GameObject DCard2;
     GameObject DCard3;
@@ -87,6 +90,46 @@ public class DeckDebate1a : MonoBehaviour
     GameObject DCard38;
     GameObject DCard39;
 
+    GameObject OCard1;
+    GameObject OCard2;
+    GameObject OCard3;
+    GameObject OCard4;
+    GameObject OCard5;
+    GameObject OCard6;
+    GameObject OCard7;
+    GameObject OCard8;
+    GameObject OCard9;
+    GameObject OCard10;
+    GameObject OCard11;
+    GameObject OCard12;
+    GameObject OCard13;
+    GameObject OCard14;
+    GameObject OCard15;
+    GameObject OCard16;
+    GameObject OCard17;
+    GameObject OCard18;
+    GameObject OCard19;
+    GameObject OCard20;
+    GameObject OCard21;
+    GameObject OCard22;
+    GameObject OCard23;
+    GameObject OCard24;
+    GameObject OCard25;
+    GameObject OCard26;
+    GameObject OCard27;
+    GameObject OCard28;
+    GameObject OCard29;
+    GameObject OCard30;
+    GameObject OCard31;
+    GameObject OCard32;
+    GameObject OCard33;
+    GameObject OCard34;
+    GameObject OCard35;
+    GameObject OCard36;
+    GameObject OCard37;
+    GameObject OCard38;
+    GameObject OCard39;
+
 
 
     // The Cards
@@ -95,6 +138,7 @@ public class DeckDebate1a : MonoBehaviour
     GameObject Card3;
     GameObject Card4;
     GameObject Card5;
+    GameObject OpponentCard;
 
     public Material Material0;
     public Material Material1;
@@ -235,7 +279,10 @@ public class DeckDebate1a : MonoBehaviour
 
     public int CardPosition;
 
-    public GameObject Scoreboard;
+    public int OCardPosition;
+
+
+public GameObject Scoreboard;
 
     public Material AudienceMaterial;
 
@@ -249,6 +296,8 @@ public class DeckDebate1a : MonoBehaviour
 
     public int ReferencePower;
     public int ReferencePower2;
+    public int ReferencePower3;
+    public int ReferencePower4;
 
     public Text AudienceSpeech;
 
@@ -259,9 +308,10 @@ public class DeckDebate1a : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OpponentMove = 0;
         //Your Deck List
         List<int> CardShuffle = new List<int>(); 
-        for (int c = 0; c < 40; c++)
+        for (int c = 0; c < 39; c++)
         {
             CardShuffle.Add(c);
         }
@@ -423,6 +473,176 @@ public class DeckDebate1a : MonoBehaviour
         i = CardShuffle[index];
         CardShuffle.RemoveAt(index);
         DCard39 = GameObject.Find(i.ToString());
+
+        //Your Opponent Deck List
+        List<int> OpponentCardShuffle = new List<int>();
+        for (int e = 1; e < 41; e++)
+        {
+            OpponentCardShuffle.Add(e);
+        }
+        int Oindex;
+        int o;
+        Oindex = Random.Range(1, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard1 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard2 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard3 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard4 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard5 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard6 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard7 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard8 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard9 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard10 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard11 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard12 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard13 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard14 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard15 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard16 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard17 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard18 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard19 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard20 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard21 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard22 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard23 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard24 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard25 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard26 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard27 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard28 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard29 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard30 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard31 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard32 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard33 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard34 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard35 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard36 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard37 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard38 = GameObject.Find((39 + o).ToString());
+        Oindex = Random.Range(0, OpponentCardShuffle.Count - 1);
+        o = OpponentCardShuffle[Oindex];
+        OpponentCardShuffle.RemoveAt(Oindex);
+        OCard39 = GameObject.Find((39 + o).ToString());
+
+
+
+
+
 
         PlayerDamaged.Stop();
         OpponentDamaged.Stop();
@@ -3541,6 +3761,7 @@ void Update()
 
     IEnumerator OpponentReply()
     {
+        OpponentMove = OpponentMove + 1;
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
         // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
@@ -3561,67 +3782,272 @@ void Update()
         OpponentSpotlight.SetActive(true);
         SpeechBubble.gameObject.SetActive(false);
         WhichOpponentReply = (Mathf.Round(Random.Range(1, 10)));
-        if (WhichOpponentReply == 1)
+
+        if (OpponentMove == 1)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage1").GetComponent<Text>().text); 
-            OpponentSpeech.text = GameObject.Find("Card1").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard1;
         }
-        if (WhichOpponentReply == 2)
+        else if (OpponentMove == 2)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage2").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card2").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard2;
         }
-        if (WhichOpponentReply == 3)
+        else if (OpponentMove == 3)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage3").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card3").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard3;
         }
-        if (WhichOpponentReply == 4)
+        else if (OpponentMove == 3)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage4").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card4").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard3;
         }
-        if (WhichOpponentReply == 5)
+        else if (OpponentMove == 4)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage5").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card5").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard4;
         }
-        if (WhichOpponentReply == 6)
+        else if (OpponentMove == 5)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage6").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card6").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard5;
         }
-        if (WhichOpponentReply == 7)
+        else if (OpponentMove == 6)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage7").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card7").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard6;
         }
-        if (WhichOpponentReply == 8)
+        else if (OpponentMove == 7)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage8").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card8").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard7;
         }
-        if (WhichOpponentReply == 9)
+        else if (OpponentMove == 8)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage9").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card9").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard8;
         }
-        if (WhichOpponentReply == 10)
+        else if (OpponentMove == 9)
         {
-            PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(GameObject.Find("PlayerDamage10").GetComponent<Text>().text); ;
-            OpponentSpeech.text = GameObject.Find("Card10").GetComponent<Text>().text;
-            yield return new WaitForSeconds(0.001f);
+            OCard = OCard9;
+        }
+        else if (OpponentMove == 10)
+        {
+            OCard = OCard10;
+        }
+        else if (OpponentMove == 11)
+        {
+            OCard = OCard11;
+        }
+        else if (OpponentMove == 12)
+        {
+            OCard = OCard12;
+        }
+        else if (OpponentMove == 13)
+        {
+            OCard = OCard13;
+        }
+        else if (OpponentMove == 14)
+        {
+            OCard = OCard14;
+        }
+        else if (OpponentMove == 15)
+        {
+            OCard = OCard15;
+        }
+        else if (OpponentMove == 16)
+        {
+            OCard = OCard16;
+        }
+        else if (OpponentMove == 17)
+        {
+            OCard = OCard17;
+        }
+        else if (OpponentMove == 18)
+        {
+            OCard = OCard18;
+        }
+        else if (OpponentMove == 19)
+        {
+            OCard = OCard19;
+        }
+        else if (OpponentMove == 20)
+        {
+            OCard = OCard20;
+        }
+        else if (OpponentMove == 21)
+        {
+            OCard = OCard21;
+        }
+        else if (OpponentMove == 22)
+        {
+            OCard = OCard22;
+        }
+        else if (OpponentMove == 23)
+        {
+            OCard = OCard23;
+        }
+        else if (OpponentMove == 24)
+        {
+            OCard = OCard24;
+        }
+        else if (OpponentMove == 25)
+        {
+            OCard = OCard25;
+        }
+        else if (OpponentMove == 26)
+        {
+            OCard = OCard26;
+        }
+        else if (OpponentMove == 27)
+        {
+            OCard = OCard27;
+        }
+        else if (OpponentMove == 28)
+        {
+            OCard = OCard28;
+        }
+        else if (OpponentMove == 29)
+        {
+            OCard = OCard29;
+        }
+        else if (OpponentMove == 30)
+        {
+            OCard = OCard30;
+        }
+        else if (OpponentMove == 31)
+        {
+            OCard = OCard31;
+        }
+        else if (OpponentMove == 32)
+        {
+            OCard = OCard32;
+        }
+        else if (OpponentMove == 33)
+        {
+            OCard = OCard33;
+        }
+        else if (OpponentMove == 34)
+        {
+            OCard = OCard34;
+        }
+        else if (OpponentMove == 35)
+        {
+            OCard = OCard35;
+        }
+        else if (OpponentMove == 36)
+        {
+            OCard = OCard36;
+        }
+        else if (OpponentMove == 37)
+        {
+            OCard = OCard37;
+        }
+        else if (OpponentMove == 38)
+        {
+            OCard = OCard38;
+        }
+        else if (OpponentMove == 39)
+        {
+            OCard = OCard39;
+        }
+
+        Description = OCard.transform.GetChild(0).GetChild(1).gameObject;
+        EmotionPro = OCard.transform.GetChild(0).GetChild(5).gameObject;
+        EmotionCon = OCard.transform.GetChild(0).GetChild(6).gameObject;
+        AudienceResponse = OCard.transform.GetChild(0).GetChild(3).gameObject;
+        AudienceResponsePro = OCard.transform.GetChild(0).GetChild(2).gameObject;
+        AudienceResponseCon = OCard.transform.GetChild(0).GetChild(4).gameObject;
+        AudienceResponseSpeechPro = OCard.transform.GetChild(0).GetChild(8).gameObject;
+        AudienceResponseSpeechCon = OCard.transform.GetChild(0).GetChild(9).gameObject;
+        CardType = OCard.transform.GetChild(0).GetChild(7).gameObject;
+        yield return new WaitForSeconds(0.1f);
+        if (CardType.GetComponent<Text>().text == "Argument")
+        {
+            OpponentSpeech.text = Description.GetComponent<Text>().text;
+            OpponentDummyCard.active = true;
+            OpponentDummyCard.GetComponent<Animation>().Play("CardThrow");
+            yield return new WaitForSeconds(0.8f);
+            PlayerDamaged.Play();
+            OpponentDummyCard.active = false;
+            yield return new WaitForSeconds(0.1f);
+            OpponentDamaged.Stop();
+
+
+            yield return new WaitForSeconds(0.1f);
+            if (AudienceMood == int.Parse(EmotionPro.GetComponent<Text>().text))
+            {
+                PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(AudienceResponsePro.GetComponent<Text>().text);
+                AudienceSpeechBubble.active = true;
+                AudienceSpeech.text = AudienceResponseSpeechPro.GetComponent<Text>().text;
+                AudienceSpeech.GetComponent<Text>().color = Color.blue;
+            }
+            else if (AudienceMood == int.Parse(EmotionCon.GetComponent<Text>().text))
+            {
+                PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(AudienceResponseCon.GetComponent<Text>().text);
+                AudienceSpeechBubble.active = true;
+                AudienceSpeech.text = AudienceResponseSpeechCon.GetComponent<Text>().text;
+                AudienceSpeech.GetComponent<Text>().color = Color.red;
+            }
+            else
+            {
+                PlayerAudienceApproval = PlayerAudienceApproval - int.Parse(AudienceResponse.GetComponent<Text>().text);
+            }
+        }
+        else if (CardType.GetComponent<Text>().text == "Gesture")
+        {
+            GestureEffect = OCard.transform.GetChild(0).GetChild(10).gameObject;
+            if (GestureEffect.GetComponent<Text>().text == "0")
+            {
+                AudienceMood = 3;
+                OpponentSpeech.text = "I can't believe you would be so heartless";
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "1")
+            {
+                AudienceMood = 1;
+                OpponentSpeech.text = "To a fair and respectful debate";
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "2")
+            {
+                AudienceMood = 5;
+                OpponentSpeech.text = "ARE WE ALL GOING TO TAKE THIS?";
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "3")
+            {
+                AudienceMood = 2;
+                OpponentSpeech.text = "Well since we know I'm right how about we end this right now?";
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "4")
+            {
+                AudienceMood = 4;
+                OpponentSpeech.text = "Come on everyone this is something to be passionate about";
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "5")
+            {
+                AudienceMood = 3;
+                OpponentSpeech.text = "No matter what you say, I won't give up for what I believe in";
+                PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "6")
+            {
+                AudienceMood = 1;
+                OpponentSpeech.text = "Well done, you're good at debating. It's not over yet though!";
+                PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "7")
+            {
+                AudienceMood = 5;
+                OpponentSpeech.text = "AHHHHHHHHHHHHHHHHHHHHHH!!!";
+                PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "8")
+            {
+                AudienceMood = 2;
+                OpponentSpeech.text = "Wow, I'm not good at this am I?";
+                PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
+            }
+            else if (GestureEffect.GetComponent<Text>().text == "9")
+            {
+                AudienceMood = 4;
+                OpponentSpeech.text = "I'll give youy this, you know what you're doing, I'll almost fell bad for you when I beat you at this debate";
+                PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
+            }
         }
         
+
+
         yield return new WaitForSeconds(0.8f);
         PlayerDamaged.Play();
         OpponentDummyCard.active = false;
@@ -3646,6 +4072,7 @@ void Update()
         OpponentSpeechBubble.gameObject.SetActive(false);
         Deck1.gameObject.SetActive(true);
         TalkCheck = 2;
+        AudienceSpeechBubble.active = false;
         AudienceSpeechBubble.transform.position = new Vector3((Random.Range(-18, 18)), (Random.Range(0, 10)), 20);
     }
     
