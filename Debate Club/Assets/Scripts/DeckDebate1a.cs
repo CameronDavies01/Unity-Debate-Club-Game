@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DeckDebate1a : MonoBehaviour
 {
 
+
     GameObject Description;
     GameObject EmotionPro;
     GameObject EmotionCon;
@@ -130,6 +131,7 @@ public class DeckDebate1a : MonoBehaviour
     GameObject OCard38;
     GameObject OCard39;
 
+    public GameObject AudienceOpinion;
 
 
     // The Cards
@@ -664,7 +666,7 @@ public GameObject Scoreboard;
         YesYes.mute = true;
         WeWillDoThis.mute = true;
         AudienceMood = 5;
-        PlayerAudienceApproval = 50;
+        PlayerAudienceApproval = int.Parse(AudienceOpinion.GetComponent<Text>().text);
         Card1 = DCard1;
         Card2 = DCard2;
         Card3 = DCard3;
@@ -1130,12 +1132,15 @@ void Update()
             YoureWrong.mute = false;
             YoureOn.mute = true;
             MaybeImWrong.mute = true;
+
+
         }
         else if (PlayerAudienceApproval < 45)
         {
             YoureWrong.mute = true;
             YoureOn.mute = true;
             MaybeImWrong.mute = false;
+
         }
         else
         {
@@ -3762,8 +3767,8 @@ void Update()
     IEnumerator OpponentReply()
     {
         OpponentMove = OpponentMove + 1;
+        
         // 1 = Serious, 2 = Humourous, 3 = Sad, 4 = Passionate, and 5 = Angry
-        // A lot of this is copy and pasted for demo purposes remove it for final release.
         yield return new WaitForSeconds(0.1f);
         AudienceSpeechBubble.active = false;
         TalkCheck = 2;
@@ -3771,6 +3776,7 @@ void Update()
         MaleVoice1.Play();
         OpponentDummyCard.active = true;
         OpponentDummyCard.GetComponent<Animation>().Play("OpponentCardThrow");
+        
         MaleVoice2.Pause();
         QM1.SetActive(false);
         QM2.SetActive(false);
@@ -3790,10 +3796,6 @@ void Update()
         else if (OpponentMove == 2)
         {
             OCard = OCard2;
-        }
-        else if (OpponentMove == 3)
-        {
-            OCard = OCard3;
         }
         else if (OpponentMove == 3)
         {
@@ -3944,6 +3946,7 @@ void Update()
             OCard = OCard39;
         }
 
+
         Description = OCard.transform.GetChild(0).GetChild(1).gameObject;
         EmotionPro = OCard.transform.GetChild(0).GetChild(5).gameObject;
         EmotionCon = OCard.transform.GetChild(0).GetChild(6).gameObject;
@@ -4041,7 +4044,7 @@ void Update()
             else if (GestureEffect.GetComponent<Text>().text == "9")
             {
                 AudienceMood = 4;
-                OpponentSpeech.text = "I'll give youy this, you know what you're doing, I'll almost fell bad for you when I beat you at this debate";
+                OpponentSpeech.text = "I'll give you this, you know what you're doing, I'll almost fell bad for you when I beat you at this debate";
                 PlayerAudienceApproval = PlayerAudienceApproval - ((100 - PlayerAudienceApproval) / 10);
             }
         }
@@ -4080,34 +4083,14 @@ void Update()
     {
         yield return new WaitForSeconds(1);
         EndState.text = "YOU WIN";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 5";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 4";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 3";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 2";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 1";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Application.LoadLevel(0);
     }
     IEnumerator YouLose()
     {
         yield return new WaitForSeconds(1);
         EndState.text = "YOU LOSE";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 5";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 4";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 3";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 2";
-        yield return new WaitForSeconds(1);
-        EndState.text = "Resetting In 1";
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         Application.LoadLevel(0);
     }
 }

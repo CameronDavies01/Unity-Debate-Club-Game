@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ProWeed.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 94d365e12fef81c46bd6ebbf8808bd70
   - enabled: 1
-    path: Assets/Scenes/AntiGun.unity
-    guid: ba8130e857dc2f940b27057522468d9a
+    path: Assets/Scenes/ProWeed.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/AntiWeed.unity
+    guid: 405f723270531eb4180f404fba4b2bee
   m_configObjects: {}
