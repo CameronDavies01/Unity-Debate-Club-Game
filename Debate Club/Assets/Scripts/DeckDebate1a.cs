@@ -1220,7 +1220,7 @@ void Update()
             Emotion5.gameObject.GetComponent<SpriteRenderer>().sprite = Angry;
         }
 
-        if ((CardPosition > 34) && (PlayerAudienceApproval > 50))
+        if ((CardPosition > 34) && (PlayerAudienceApproval > 49))
         {
             StartCoroutine(YouWin());
         }

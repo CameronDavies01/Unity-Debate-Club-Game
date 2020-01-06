@@ -29,10 +29,10 @@ public class ProWeedLoad : MonoBehaviour
     }
     void ProGunIsPressed()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     void AntiGunIsPressed()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(4);
     }
 }

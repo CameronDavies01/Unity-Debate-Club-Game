@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AntiWeed.unity
     guid: 405f723270531eb4180f404fba4b2bee
+  - enabled: 1
+    path: Assets/Scenes/ProGun.unity
+    guid: 8aa32e6fa50fe9c4ab211c8f1b89d406
+  - enabled: 1
+    path: Assets/Scenes/AntiGun.unity
+    guid: ab43773a11c15b94ca224687aa154eb9
   m_configObjects: {}
